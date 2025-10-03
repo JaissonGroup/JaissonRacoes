@@ -52,7 +52,7 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 
 ## Fazendas da Jaisson Rações.
 
-| Fazenda               | Localização        | Área (ha) | Porte   |
+| Fazenda                   | Localização        | Área (ha) | Porte   |
 |---------------------------|--------------------|:---------:|:-------:|
 | **Fazenda Maruim**        | Corupá – SC        |    300    | Pequena |
 | **Fazenda Gaúcha**        | Passo Fundo – RS   |    400    | Pequena |
@@ -60,6 +60,7 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 | **Fazenda Pantanal**      | Dourados – MS      |   1200    | Média   |
 | **Fazenda Cerrado**       | Sorriso – MT       |   2500    | Grande  |
 | **Fazenda Capital**       | Rio Verde – GO     |   2200    | Grande  |
+| ***ÁREA TOTAL***          | ------------------ | **7100**  | ------- |
 
 
 ## Condições agroambientais por fazenda
@@ -102,12 +103,12 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 
 | Grão         | Produção Média Padrão (t/ha) |
 |--------------|------------------------------|
-| **Milho**    | 3.9 t/ha                     |
-| **Soja**     | 3.5 t/ha                     |
-| **Sorgo**    | 1.5 t/ha                     |
-| **Trigo**    | 1.3 t/ha                     |
-| **Aveia**    | 2.4 t/ha                     |
-| **Girassol** | 2.7 t/ha                     |
+| **Milho**    | 6.0 t/ha                     |
+| **Soja**     | 3.8 t/ha                     |
+| **Sorgo**    | 3.2 t/ha                     |
+| **Trigo**    | 3.0 t/ha                     |
+| **Aveia**    | 2.8 t/ha                     |
+| **Girassol** | 1.8 t/ha                     |
 
 
 ## Produção Por Fazenda (a partir dos pesos de importância)
@@ -136,69 +137,70 @@ $$
 
 
 ### Fazenda Maruim
-| Grão     |   Produção base (t/ha) |   Ajuste total (%) |   Produção ajustada (t/ha) |
-|----------|------------------------|--------------------|----------------------------|
-| **Aveia**    |                    2.4 |            +32%|                       3.17 |
-| **Girassol** |                    2.7 |           -60% |                       1.08 |
-| **Milho**    |                    3.9 |           -30% |                       2.73 |
-| **Soja**     |                    3.5 |           -34% |                       2.31 |
-| **Sorgo**    |                    1.5 |           -68% |                       0.48 |
-| **Trigo**    |                    1.3 |           +32% |                       1.72 |
+| Grão         |   Produção base (t/ha) | Ajuste total (%)   |   Produção ajustada (t/ha) |
+|--------------|------------------------|--------------------|----------------------------|
+| **Aveia**    |                    2.8 | +32.0%             |                       3.7  |
+| **Girassol** |                    1.8 | -60.0%             |                       0.72 |
+| **Milho**    |                    6   | -30.0%             |                       4.2  |
+| **Soja**     |                    3.8 | -34.0%             |                       2.51 |
+| **Sorgo**    |                    3.2 | -68.0%             |                       1.02 |
+| **Trigo**    |                    3   | +32.0%             |                       3.96 |
 
 
 ### Fazenda Gaúcha
-| Grão     |   Produção base (t/ha) |   Ajuste total (%) |   Produção ajustada (t/ha) |
-|----------|------------------------|--------------------|----------------------------|
-| **Aveia**    |                    2.4 |           +40% |                       3.36 |
-| **Girassol** |                    2.7 |          -100% |                       0    |
-| **Milho**    |                    3.9 |             0% |                       3.9  |
-| **Soja**     |                    3.5 |            -6% |                       3.29 |
-| **Sorgo**    |                    1.5 |          -100% |                       0    |
-| **Trigo**    |                    1.3 |           +40% |                       1.82 |
+| Grão         |   Produção base (t/ha) | Ajuste total (%)   |   Produção ajustada (t/ha) |
+|--------------|------------------------|--------------------|----------------------------|
+| **Aveia**    |                    2.8 | +40.0%             |                       3.92 |
+| **Girassol** |                    1.8 | -100.0%            |                       0    |
+| **Milho**    |                    6   | 0.0%               |                       6    |
+| **Soja**     |                    3.8 | -6.0%              |                       3.57 |
+| **Sorgo**    |                    3.2 | -100.0%            |                       0    |
+| **Trigo**    |                    3   | +40.0%             |                       4.2  |
 
 
 ### Fazenda Campos Gerais
-| Grão     |   Produção base (t/ha) |   Ajuste total (%) |   Produção ajustada (t/ha) |
-|----------|------------------------|--------------------|----------------------------|
-| **Aveia**    |                    2.4 |          +100% |                       4.8  |
-| **Girassol** |                    2.7 |           -60% |                       1.08 |
-| **Milho**    |                    3.9 |           -74% |                       1.01 |
-| **Soja**     |                    3.5 |           -74% |                       0.91 |
-| **Sorgo**    |                    1.5 |           -68% |                       0.48 |
-| **Trigo**    |                    1.3 |          +100% |                       2.6  |
+| Grão         |   Produção base (t/ha) | Ajuste total (%)   |   Produção ajustada (t/ha) |
+|--------------|------------------------|--------------------|----------------------------|
+| **Aveia**    |                    2.8 | +100.0%            |                       5.6  |
+| **Girassol** |                    1.8 | -60.0%             |                       0.72 |
+| **Milho**    |                    6   | -74.0%             |                       1.56 |
+| **Soja**     |                    3.8 | -74.0%             |                       0.99 |
+| **Sorgo**    |                    3.2 | -68.0%             |                       1.02 |
+| **Trigo**    |                    3   | +100.0%            |                       6    |
 
 
 ### Fazenda Pantanal
-| Grão     |   Produção base (t/ha) |   Ajuste total (%) |   Produção ajustada (t/ha) |
-|----------|------------------------|--------------------|----------------------------|
-| **Aveia**    |                    2.4 |          -100% |                       0    |
-| **Girassol** |                    2.7 |           +34% |                       3.62 |
-| **Milho**    |                    3.9 |           +44% |                       5.62 |
-| **Soja**     |                    3.5 |           +46% |                       5.11 |
-| **Sorgo**    |                    1.5 |           +42% |                       2.13 |
-| **Trigo**    |                    1.3 |          -100% |                       0    |
+| Grão         |   Produção base (t/ha) | Ajuste total (%)   |   Produção ajustada (t/ha) |
+|--------------|------------------------|--------------------|----------------------------|
+| **Aveia**    |                    2.8 | -100.0%            |                       0    |
+| **Girassol** |                    1.8 | +34.0%             |                       2.41 |
+| **Milho**    |                    6   | +44.0%             |                       8.64 |
+| **Soja**     |                    3.8 | +46.0%             |                       5.55 |
+| **Sorgo**    |                    3.2 | +42.0%             |                       4.54 |
+| **Trigo**    |                    3   | -100.0%            |                       0    |
 
 
 ### Fazenda Cerrado
-| Grão     |   Produção base (t/ha) |   Ajuste total (%) |   Produção ajustada (t/ha) |
-|----------|------------------------|--------------------|----------------------------|
-| **Aveia**    |                    2.4 |           -64% |                       0.86 |
-| **Girassol** |                    2.7 |           +34% |                       3.62 |
-| **Milho**    |                    3.9 |             0% |                       3.9  |
-| **Soja**     |                    3.5 |            +6% |                       3.71 |
-| **Sorgo**    |                    1.5 |           +42% |                       2.13 |
-| **Trigo**    |                    1.3 |           -64% |                       0.47 |
+| Grão         |   Produção base (t/ha) | Ajuste total (%)   |   Produção ajustada (t/ha) |
+|--------------|------------------------|--------------------|----------------------------|
+| **Aveia**    |                    2.8 | -64.0%             |                       1.01 |
+| **Girassol** |                    1.8 | +34.0%             |                       2.41 |
+| **Milho**    |                    6   | 0.0%               |                       6    |
+| **Soja**     |                    3.8 | +6.0%              |                       4.03 |
+| **Sorgo**    |                    3.2 | +42.0%             |                       4.54 |
+| **Trigo**    |                    3   | -64.0%             |                       1.08 |
 
 
 ### Fazenda Capital
-| Grão     |   Produção base (t/ha) |   Ajuste total (%) |   Produção ajustada (t/ha) |
-|----------|------------------------|--------------------|----------------------------|
-| **Aveia**    |                    2.4 |           -64% |                       0.86 |
-| **Girassol** |                    2.7 |           +34% |                       3.62 |
-| **Milho**    |                    3.9 |             0% |                       3.9  |
-| **Soja**     |                    3.5 |            +6% |                       3.71 |
-| **Sorgo**    |                    1.5 |           +42% |                       2.13 |
-| **Trigo**    |                    1.3 |           -64% |                       0.47 |
+| Grão         |   Produção base (t/ha) | Ajuste total (%)   |   Produção ajustada (t/ha) |
+|--------------|------------------------|--------------------|----------------------------|
+| **Aveia**    |                    2.8 | -64.0%             |                       1.01 |
+| **Girassol** |                    1.8 | +34.0%             |                       2.41 |
+| **Milho**    |                    6   | 0.0%               |                       6    |
+| **Soja**     |                    3.8 | +6.0%              |                       4.03 |
+| **Sorgo**    |                    3.2 | +42.0%             |                       4.54 |
+| **Trigo**    |                    3   | -64.0%             |                       1.08 |
+
 
 
 ## Fábrica de Rações Jaisson Rações
@@ -207,7 +209,6 @@ $$
 
 
 ## Distância de cada fazenda até a Fábrica
-
 
 | Fazenda                   | Localização        | Distancia até Fábrica (km) |
 |---------------------------|--------------------|----------------------------|
@@ -223,7 +224,20 @@ $$
 
 
 
------------------------------------
+
+
+
+
+------------
+
+## Regras de Negócio
+
+- Todas as fazendas devem ter sua área total utilizada.
+- A quantidade mínima de produção de cada tipo de ração deve ser respeitada.
+
+
+
+------------
 
 ## Links Google Colab (código)
 - Calcular Produção por Fazenda: https://colab.research.google.com/drive/1pTE2eD9M3s4WdMI8yQtazyfOeL7Pb-R0?usp=sharing
