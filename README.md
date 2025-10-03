@@ -112,6 +112,29 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 
 ## Produção Por Fazenda (a partir dos pesos de importância)
 
+A produção de um grão \(g\) em uma fazenda \(f\) é dada por:
+
+$$
+P_{ajustada}(g,f) = P_{base}(g) \cdot \left( 1 + \frac{1}{100} \sum_{i=1}^{n} m_i(g,f) \cdot w_i(g) \right)
+$$
+
+Onde:
+
+- \(P_{base}(g)\) = produção padrão do grão \(g\) (t/ha).  
+- \(w_i(g)\) = peso (em %) do fator \(i\) para o grão \(g\).  
+- \(m_i(g,f)\) = comparação entre a condição da fazenda \(f\) e o perfil ideal do grão \(g\):
+
+$$
+m_i(g,f) =
+\begin{cases}
++1 & \text{se a condição da fazenda = perfil ideal do grão} \\
+-1 & \text{se a condição da fazenda ≠ perfil ideal do grão}
+\end{cases}
+$$
+
+- \(n\) = número total de fatores considerados (aqui: 6 → Água, pH, Textura, Temperatura, Radiação, Fertilidade).
+
+
 ### Fazenda Maruim
 | Grão     |   Produção base (t/ha) |   Ajuste total (%) |   Produção ajustada (t/ha) |
 |----------|------------------------|--------------------|----------------------------|
