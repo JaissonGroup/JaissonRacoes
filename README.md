@@ -111,6 +111,18 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 
 
 
+
+
+
+
+
+
+-----------------------------------
+
+## Links Google Colab (código)
+- Calcular Produção por Fazenda: https://colab.research.google.com/drive/1pTE2eD9M3s4WdMI8yQtazyfOeL7Pb-R0?usp=sharing
+
+
 ## Fontes
 - Embrapa                
 https://www.embrapa.br/
