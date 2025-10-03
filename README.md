@@ -50,11 +50,11 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 | ---------   | Pré-mix mineral vitamínico |
 
 
-# Fazendas da Jaisson Rações.
+## Fazendas da Jaisson Rações.
 
 | Fazenda               | Localização        | Área (ha) | Porte   |
 |---------------------------|--------------------|:---------:|:-------:|
-| **Fazenda Maruim**        | Lages – SC         |    300    | Pequena |
+| **Fazenda Maruim**        | Corupá – SC        |    300    | Pequena |
 | **Fazenda Gaúcha**        | Passo Fundo – RS   |    400    | Pequena |
 | **Fazenda Campos Gerais** | Ponta Grossa – PR  |    500    | Pequena |
 | **Fazenda Pantanal**      | Dourados – MS      |   1200    | Média   |
@@ -201,6 +201,23 @@ $$
 | **Trigo**    |                    1.3 |           -64% |                       0.47 |
 
 
+## Fábrica de Rações Jaisson Rações
+
+- A fábrica que produz e distribui as rações da Jaisson Rações é localizada em Pirabeiraba, SC.
+
+
+## Distância de cada fazenda até a Fábrica
+
+
+| Fazenda                   | Localização        | Distancia até Fábrica (km) |
+|---------------------------|--------------------|----------------------------|
+| **Fazenda Maruim**        | Corupá – SC        | 70 km                      |
+| **Fazenda Gaúcha**        | Passo Fundo – RS	 | 566 km                     |
+| **Fazenda Campos Gerais** | Ponta Grossa – PR  | 228 km                     |
+| **Fazenda Pantanal**      | Dourados – MS      | 954 km                     |
+| **Fazenda Cerrado**       | Sorriso – MT       | 2143 km                    |
+| **Fazenda Capital**       | Rio Verde – GO     | 1287 km                    |
+| ***FÁBRICA***             | Pirabeiraba – SC   | 0 km                       |
 
 
 
