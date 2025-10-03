@@ -35,20 +35,91 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 | **Pré-mix vit/min**    | 1%         | 1%         | 1%            | 1%           | 1%           | 1%              | 2%           |
 
 
-
-
 ## Grãos Produzidos / Ingredientes
 
-- Milho
-- Soja -> Farelo de Soja
-- Sorgo
-- Trigo -> Farelo de trigo
-- Aveia
-- Girassol -> Farelo de girassol
-- Calcário calcítico
-- Óleo de soja
-- Pré-mix mineral / vitamínico
+| Grão        | Ingrediente
+|-------------|----------------------------|
+| **Milho**   | Milho                      |
+| **Soja**    | Farelo de Soja             |
+| **Sorgo**   | Sorgo                      |
+| **Trigo**   | Farelo de trigo            |
+| **Aveia**   | Aveia                      |
+| **Girassol**| Farelo de girassol         |
+| ---------   | Calcário calcítico         |
+| ---------   | Óleo de soja               |
+| ---------   | Pré-mix mineral vitamínico |
 
 
-## Links do Google Colab
-- **Gráficos de composição das rações:** https://colab.research.google.com/drive/1-btODBNLbsUJ2gSM1pOw75CPSVsphiZr?usp=sharing
+# Fazendas da Jaisson Rações.
+
+| Fazenda               | Localização        | Área (ha) | Porte   |
+|---------------------------|--------------------|:---------:|:-------:|
+| **Fazenda Maruim**        | Lages – SC         |    300    | Pequena |
+| **Fazenda Gaúcha**        | Passo Fundo – RS   |    400    | Pequena |
+| **Fazenda Campos Gerais** | Ponta Grossa – PR  |    500    | Pequena |
+| **Fazenda Pantanal**      | Dourados – MS      |   1200    | Média   |
+| **Fazenda Cerrado**       | Sorriso – MT       |   2500    | Grande  |
+| **Fazenda Capital**       | Rio Verde – GO     |   2200    | Grande  |
+
+
+## Condições agroambientais por fazenda
+
+| Fazenda                    | Radiação solar (kWh/m²/dia) | Dispon. de água | pH (acidez) | Textura do solo  | Temp. média (°C)     | Fertilidade natural |
+|----------------------------|:---------------------------:|:---------------:|:-----------:|:----------------:|:-------------------:|:-------------------:|
+| **Fazenda Maruim**         |            Baixa             |      Alta       |    Ácido      |     Argilosa     |       Frio         |        Média        |
+| **Fazenda Gaúcha**         |            Media             |      Alta       |   Ácido       |     Argilosa     |       Frio         |        Alta         |
+| **Fazenda Campos Gerais**  |            Media             |      Média      |    Ácido      |     Argilosa     |       Frio         |        Média        |
+| **Fazenda Pantanal**       |            Alta              |      Alta      |    Básico      |     Arenosa      |       Quente       |        Baixa        |
+| **Fazenda Cerrado**        |            Alta              |      Média      |    Básico     |     Arenosa      |       Quente       |        Baixa        |
+| **Fazenda Capital**        |            Alta              |      Média      |    Básico     |     Arenosa      |       Quente       |        Baixa        |
+
+
+## Perfil agronômico desejado por grão
+
+| Grão         | Água       | pH ideal | Textura preferida         | Temp. ideal (°C) | Radiação (kWh/m²/dia)  | Fertilidade     |
+|--------------|:----------:|:--------:|:-------------------------:|:----------------:|:---------------------:|:----------------:|
+| **Milho**    | Alta       | Básico   | Argilosa                  | Quente            | Alta                 | Alta             |
+| **Soja**     | Muita      | Básico   | Argilosa                  | Quente            | Alta                 | Alta             |
+| **Sorgo**    | Pouca      | Básico   | Arenosa                   | Quente            | Alta                 | Média            |
+| **Trigo**    | Média      | Ácido    | Argilosa                  | Frio              | Média                | Média            |
+| **Aveia**    | Média      | Ácido    | Argilosa                  | Frio              | Média                | Média            |
+| **Girassol** | Pouca      | Básico   | Arenosa                   | Quente            | Alta                 | Média            |
+
+
+## Pesos de importância (somam 100% por grão)
+
+| Grão         | Água |  pH  | Textura | Temperatura | Radiação | Fertilidade |
+|--------------|:----:|:----:|:-------:|:-----------:|:--------:|:-----------:|
+| **Milho**    | 22%  | 13%  |  13%    |    22%      |   15%    |    15%      |
+| **Soja**     | 20%  | 17%  |  13%    |    20%      |   16%    |    14%      |
+| **Sorgo**    | 13%  | 13%  |  20%    |    22%      |   16%    |    16%      |
+| **Trigo**    | 18%  | 18%  |  14%    |    22%      |   16%    |    12%      |
+| **Aveia**    | 18%  | 18%  |  14%    |    22%      |   16%    |    12%      |
+| **Girassol** | 13%  | 13%  |  17%    |    20%      |   17%    |    20%      |
+
+
+## Produção Média Padrão (toneladas por ha) (dados da íntegra)
+
+| Grão         | Produção Média Padrão (t/ha) |
+|--------------|------------------------------|
+| **Milho**    | 3.9 t/ha                     |
+| **Soja**     | 3.5 t/ha                     |
+| **Sorgo**    | 1.5 t/ha                     |
+| **Trigo**    | 1.3 t/ha                     |
+| **Aveia**    | 2.4 t/ha                     |
+| **Girassol** | 2.7 t/ha                     |
+
+
+
+## Fontes
+- Embrapa                
+https://www.embrapa.br/
+
+- Embrapa Pronasolos          
+https://www.embrapa.br/pronasolos
+
+- Embrapa Sistema Brasileiro de Classificação de Solos                 
+https://www.embrapa.br/busca-de-publicacoes/-/publicacao/1176834/sistema-brasileiro-de-classificacao-de-solos
+
+- Embrapa Solos brasileiros
+https://www.embrapa.br/tema-solos-brasileiros/solos-do-brasil
