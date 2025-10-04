@@ -203,6 +203,77 @@ $$
 
 
 
+
+## Produção Total Máxima Possível de Grão por Fazenda
+
+### Fazenda Maruim
+| Grão         |   Produção Máxima Possível (ton) |
+|--------------|------------------------|
+| **Aveia**    |                 1108.8 t |
+| **Girassol** |                  216   t |
+| **Milho**    |                 1260   t |
+| **Soja**     |                  752.4 t |
+| **Sorgo**    |                  307.2 t |
+| **Trigo**    |                 1188   t |
+
+
+### Fazenda Gaúcha
+| Grão         |   Produção Máxima Possível (ton) |
+|--------------|------------------------|
+| **Aveia**    |                 1568   t |
+| **Girassol** |                    0   t |
+| **Milho**    |                 2400   t |
+| **Soja**     |                 1428.8 t |
+| **Sorgo**    |                    0   t |
+| **Trigo**    |                 1680   t |
+
+
+### Fazenda Campos Gerais
+| Grão         |   Produção Máxima Possível (ton) |
+|--------------|------------------------|
+| **Aveia**    |                   2800 t |
+| **Girassol** |                    360 t |
+| **Milho**    |                    780 t |
+| **Soja**     |                    494 t |
+| **Sorgo**    |                    512 t |
+| **Trigo**    |                   3000 t |
+
+
+### Fazenda Pantanal
+| Grão         |   Produção Máxima Possível (ton) |
+|--------------|------------------------|
+| **Aveia**    |                    0   t |
+| **Girassol** |                 2894.4 t |
+| **Milho**    |                10368   t |
+| **Soja**     |                 6657.6 t |
+| **Sorgo**    |                 5452.8 t |
+| **Trigo**    |                    0   t |
+
+
+### Fazenda Cerrado
+| Grão         |   Produção Máxima Possível (ton) |
+|--------------|------------------------|
+| **Aveia**    |                   2520 t |
+| **Girassol** |                   6030 t |
+| **Milho**    |                  15000 t |
+| **Soja**     |                  10070 t |
+| **Sorgo**    |                  11360 t |
+| **Trigo**    |                   2700 t |
+
+
+### Fazenda Capital
+| Grão         |   Produção Máxima Possível (ton) |
+|--------------|------------------------|
+| **Aveia**    |                 2217.6 t |
+| **Girassol** |                 5306.4 t |
+| **Milho**    |                13200   t |
+| **Soja**     |                 8861.6 t |
+| **Sorgo**    |                 9996.8 t |
+| **Trigo**    |                 2376   t |
+
+
+
+
 ## Fábrica de Rações Jaisson Rações
 
 - A fábrica que produz e distribui as rações da Jaisson Rações é localizada em Pirabeiraba, SC.
