@@ -56,12 +56,12 @@ for col in ["Água", "pH", "Textura", "Temperatura", "Radiação", "Fertilidade"
 
 # 5) Produção Média Padrão (t/ha)
 producao_padrao_df = pd.DataFrame([
-    {"Grão": "Milho",    "Produção (t/ha)": 3.9},
-    {"Grão": "Soja",     "Produção (t/ha)": 3.5},
-    {"Grão": "Sorgo",    "Produção (t/ha)": 1.5},
-    {"Grão": "Trigo",    "Produção (t/ha)": 1.3},
-    {"Grão": "Aveia",    "Produção (t/ha)": 2.4},
-    {"Grão": "Girassol", "Produção (t/ha)": 2.7},
+    {"Grão": "Milho",    "Produção (t/ha)": 6.0},
+    {"Grão": "Soja",     "Produção (t/ha)": 3.8},
+    {"Grão": "Sorgo",    "Produção (t/ha)": 3.2},
+    {"Grão": "Trigo",    "Produção (t/ha)": 3.0},
+    {"Grão": "Aveia",    "Produção (t/ha)": 2.8},
+    {"Grão": "Girassol", "Produção (t/ha)": 1.8},
 ])
 
 import unicodedata
@@ -159,9 +159,9 @@ def calcula_df_producao_fazenda_markdown(nome_fazenda: str) -> str:
         prod_ajustada = base * mult
 
         linhas.append({
-            "Grão": grao,
+            "Grão": f"**{grao}**",
             "Produção base (t/ha)": round(base, 2),
-            "Ajuste total (%)": round(ajuste_total_pct, 1),
+            "Ajuste total (%)": f"{'+' if ajuste_total_pct > 0 else ''}{round(ajuste_total_pct, 1)}%",
             "Produção ajustada (t/ha)": round(prod_ajustada, 2),
         })
 
@@ -175,4 +175,56 @@ def calcula_df_producao_fazenda_markdown(nome_fazenda: str) -> str:
 for fazenda in condicoes_df["Fazenda"]:
     print(f"### {fazenda}")
     print(calcula_df_producao_fazenda_markdown(fazenda))
+    print("\n")  # linha em branco para separar
+
+# ---------------------------------------------
+# Calculate and display total production per farm
+# ---------------------------------------------
+
+# Fazendas com área
+fazendas_idx = fazendas_df.set_index("Fazenda")
+
+def calculate_total_production_for_farm(nome_fazenda: str) -> str:
+    if nome_fazenda not in cond_idx.index:
+        raise ValueError(f"Fazenda '{nome_fazenda}' não encontrada em condicoes_df.")
+    if nome_fazenda not in fazendas_idx.index:
+         raise ValueError(f"Fazenda '{nome_fazenda}' não encontrada em fazendas_df.")
+
+    cond_row = cond_idx.loc[nome_fazenda]
+    area_fazenda = fazendas_idx.loc[nome_fazenda, "Área (ha)"]
+
+    linhas = []
+    for grao in producao_base.index:
+        base = float(producao_base.loc[grao])
+        pesos = pesos_idx.loc[grao]
+
+        ajuste_total_pct = 0.0
+        for fator_nome, col_fazenda, col_perfil in fatores:
+            valor_fazenda_norm = normaliza_categoria(fator_nome, cond_row[col_fazenda])
+            valor_desejado_norm = normaliza_categoria(fator_nome, perfil_idx.loc[grao, col_perfil])
+            peso_pct = float(pesos[fator_nome])
+            if valor_fazenda_norm == valor_desejado_norm:
+                ajuste_total_pct += peso_pct
+            else:
+                ajuste_total_pct -= peso_pct
+
+        mult = 1.0 + (ajuste_total_pct / 100.0)
+        mult = max(0.0, mult)
+        prod_ajustada_t_ha = base * mult
+        producao_total_ton = prod_ajustada_t_ha * area_fazenda
+
+        linhas.append({
+            "Grão": f"**{grao}**",
+            "Produção Total (ton)": round(producao_total_ton, 2),
+        })
+
+    df = pd.DataFrame(linhas).sort_values("Grão").reset_index(drop=True)
+
+    # Retorna em formato Markdown
+    return df.to_markdown(index=False, tablefmt="github")
+
+# Iterate through each farm and print the total production per grain
+for fazenda in condicoes_df["Fazenda"]:
+    print(f"### {fazenda}")
+    print(calculate_total_production_for_farm(fazenda))
     print("\n")  # linha em branco para separar
