@@ -2,8 +2,41 @@
 ### Trabalho de Pesquisa Operacional com o Professor Jaisson
 Neste trabalho, vamos resolver um problema de Programação Linear utilizando o método simplex. O problema será modelado a partir de uma empresa fictícia de Rações.
 
+# Problema:
+A Jaisson Rações é uma empresa verticalmente integrada que produz rações para animais. A empresa é dona de fazendas, caminhões e uma fábrica, cuidando desde à produção da matéria prima, até o transporte e processamento dos grãos em rações.
+Para os cálculos, desconsidere tempo.
+Utilizando os dados disponibilizados pela empresa, e respeitando suas regras de négocio, ajude a Jaisson Rações a **maximizar seu lucro**, além do valor máximo de lucro possível por safra, a empresa precisa que você forneca os seguintes dados:
+
+- Quais grãos serão plantados em cada fazenda e sua quantidade de hectares.
+- Quais caminhões farão o transporte de quais fazendas.
+- A quantidade de sacos de ração de cada linha e tamanho.
+- O custo da empresa com agricultura por fazenda.
+- O custo total da empresa com agricultura (todas as fazendas).
+- O custo da empresa com logística por fazenda.
+- O custo total da empresa com logística (todas as rotas)
+- O custo total da empresa com ingredientes comprados. (todas as rações)
+- O custo total de operação da empresa.
+- O faturamento total da empresa.
+- O lucro da empresa.
 
 
+# Regras de Negócio
+
+- Todos os tipos de ração precisam ser produzidas, ou seja, todas as linhas em todos os tamanhos.
+- Nenhum tipo de ração pode representar menos de 2.5% da produção total, arredondado para o número inteiro de cima, isso é contabilizado por quantidade de items, ou seja, independe do tamanho. Isso garante a presença da empresa em todos os mercados. (Se a Jaisson produzir 100 items, cada linha precisa ter no mínimo 3 items produzidos)
+- Todas as fazendas devem ter sua área total de hectares cultivadas.
+- Uma fazenda pode produzir vários tipos diferentes de grão, porém um tipo de grão não pode ocupar menos de 10 hectares em uma fazenda.
+- Nenhum grão pode ser deixado nas fazendas, a produção total deve ser transportada para a fábrica.
+- Caminhões só podem ter um destino por viagem, ele não pode passar por duas fazendas, por exemplo.
+- Caminhões podem realizar múltiplas viagens por safra. Em cada viagem: um único destino e um único grão.
+- Se sobrar grão na fábrica, poderão ser vendidos a preço tabelado de venda.
+- Se faltar grão na fábrica, poderão ser comprados a preço tabelado de compra.
+
+
+
+
+
+------------------------
 
 ## Rações Produzidas
 
@@ -158,7 +191,19 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 | **Óleo de soja**       | R$ 6,00       |
 | **Pré-mix vit/min**    | R$ 15,00      |
 
- 
+
+## Demanda máxima por linha de ração
+
+| Linha                 | Máx. itens padrão | Máx. big bags |
+| --------------------- | ----------------: | ------------: |
+| **BC-G (Corte)**      |           150.000 |         3.000 |
+| **BL-L (Leite)**      |           110.000 |         2.200 |
+| **AV-P (Poedeira)**   |           105.000 |         1.125 |
+| **EQ-M (Equinos)**    |            60.000 |             0 |
+| **OV-M (Ov/Capr)**    |            60.000 |         1.200 |
+| **PA-PET (Pássaros)** |            50.000 |             0 |
+| **AQ-T (Tilápia)**    |            60.000 |         1.500 |
+
 
 ## Fazendas da Jaisson Rações.
 
@@ -393,7 +438,6 @@ $$
 | **Trigo**    |          R$ 410,00 |           R$ 3024,00 |
 | **Aveia**    |          R$ 272,00 |           R$ 2327,00 |
 
-
 ## Fábrica de Rações Jaisson Rações
 
 - A fábrica que produz e distribui as rações da Jaisson Rações é localizada em Pirabeiraba, SC.
@@ -414,40 +458,36 @@ $$
 
 ## Frota de Caminhões da Jaisson Rações
 
-| Tamanho   | Modelo            | Frota | Capacidade (t) | Custo (R$/km) | Custo por t.km (R$/t.km) |
-|-----------|-------------------|:-----:|:--------------:|:-------------:|:------------------------:|
-| Pequeno   | VW Delivery       |   6   |       5 t      |   R$ 2,50     |       R$ 0,50            |
-| Médio     | Mercedes Atego    |   4   |      10 t      |   R$ 3,50     |       R$ 0,35            |
-| Grande    | Iveco Tector      |   2   |      15 t      |   R$ 4,50     |       R$ 0,30            |
+| Tamanho     | Modelo (exemplo)                                         |  Frota  | Capacidade (t) | Custo (R$/km) | Custo por t.km (R$/t.km) |
+| ----------- | -------------------------------------------------------- | :-----: | :------------: | :-----------: | :----------------------: |
+| **Pequeno** | **VW Constellation 30.330 8x2** (truck graneleiro)       | **105** |     **20**     |  **R$ 8,00**  |        **R$ 0,40**       |
+| **Médio**   | **Mercedes-Benz Actros 2651 6x4** + semirreboque 3 eixos |  **70** |     **35**     |  **R$ 10,50** |        **R$ 0,30**       |
+| **Grande**  | **Scania R 450 6x4** + bitrem graneleiro (9 eixos)      |  **35** |     **60**     |  **R$ 12,00** |        **R$ 0,20**       |
 
 
 
+## Valor de VENDA de grãos excedentes da fábrica (retirado na fabrica, sem frete)
 
-------------
-
-## Regras de Negócio
-
-- Todas as fazendas devem ter sua área total utilizada.
-- A quantidade mínima de produção de cada tipo de ração deve ser respeitada.
-- Cada caminhão só pode fazer uma viagem com um único destino por safra.
-- Nenhum grão pode ser deixado nas fazendas, a produção total deve ser transportada para a fábrica.
-
-
-------------
-
-## Links Google Colab (código)
-- Calcular Produção por Fazenda: https://colab.research.google.com/drive/1pTE2eD9M3s4WdMI8yQtazyfOeL7Pb-R0?usp=sharing
+| Grão         | Preço (R$/t) |
+| ------------ | :----------: |
+| **Milho**    |  R$ 450,00  |
+| **Soja**     |  R$ 840,00  |
+| **Sorgo**    |  R$ 680,00  |
+| **Trigo**    | R$ 1260,00 |
+| **Aveia**    | R$ 1020,00 |
+| **Girassol** | R$ 1640,00 |
 
 
-## Fontes
-- Embrapa                
-https://www.embrapa.br/
+## Valor de COMPRA de grãos faltantes da fábrica (entregue na fábrica, sem frete)
+| Grão         | Preço (R$/t) |
+| ------------ | :----------: |
+| **Milho**    | R$ 1380,00 |
+| **Soja**     | R$ 1380,00 |
+| **Sorgo**    | R$ 1120,00 |
+| **Trigo**    | R$ 2060,00 |
+| **Aveia**    | R$ 1670,00 |
+| **Girassol** | R$ 2680,00 |
 
-- Embrapa Pronasolos          
-https://www.embrapa.br/pronasolos
 
-- Embrapa Sistema Brasileiro de Classificação de Solos                 
-https://www.embrapa.br/busca-de-publicacoes/-/publicacao/1176834/sistema-brasileiro-de-classificacao-de-solos
 
-- Embrapa Solos brasileiros
-https://www.embrapa.br/tema-solos-brasileiros/solos-do-brasil
+--------
