@@ -272,6 +272,16 @@ $$
 | **Trigo**    |                 2376   t |
 
 
+## Preço de Cultivo por Grão
+
+| Grão         | Semente (R$/ha) | Manutenção (R$/ha) |
+| ------------ | --------------: | -----------------: |
+| **Milho**    |          R$ 670,00 |           R$ 1785,00 |
+| **Soja**     |          R$ 483,00 |           R$ 2433,00 |
+| **Sorgo**    |          R$ 294,00 |           R$ 1692,00 |
+| **Girassol** |          R$ 312,00 |           R$ 2364,00 |
+| **Trigo**    |          R$ 410,00 |           R$ 3024,00 |
+| **Aveia**    |          R$ 272,00 |           R$ 2327,00 |
 
 
 ## Fábrica de Rações Jaisson Rações
@@ -292,7 +302,13 @@ $$
 | ***FÁBRICA***             | Pirabeiraba – SC   | 0 km                       |
 
 
+## Frota de Caminhões da Jaisson Rações
 
+| Tamanho   | Modelo            | Frota | Capacidade (t) | Custo (R$/km) | Custo por t.km (R$/t.km) |
+|-----------|-------------------|:-----:|:--------------:|:-------------:|:------------------------:|
+| Pequeno   | VW Delivery       |   3   |       5 t      |   R$ 2,50     |       R$ 0,50            |
+| Médio     | Mercedes Atego    |   2   |      10 t      |   R$ 3,50     |       R$ 0,35            |
+| Grande    | Iveco Tector      |   1   |      15 t      |   R$ 4,50     |       R$ 0,30            |
 
 
 
@@ -305,6 +321,7 @@ $$
 
 - Todas as fazendas devem ter sua área total utilizada.
 - A quantidade mínima de produção de cada tipo de ração deve ser respeitada.
+- Cada caminhão só pode fazer uma viagem com um único destino por safra.
 
 
 
