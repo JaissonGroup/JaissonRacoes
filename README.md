@@ -10,7 +10,7 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 
 | Código  | Categoria          | Descrição                                                                 |
 |---------|-------------------|----------------------------------------------------------------------------|
-| **BC-T**   | **Bovino de corte**    | Formulação energética de alto ganho de peso, indicada para confinamento e terminação de gado de corte. |
+| **BC-G**   | **Bovino de corte**    | Formulação energética de alto ganho de peso, indicada para confinamento e terminação de gado de corte. |
 | **BL-L**   | **Vaca leiteira**      | Mistura balanceada com foco em proteína e minerais, para vacas em lactação com alta produção de leite. |
 | **AV-P**   | **Galinha poedeira**   | Ração completa para aves de postura, com níveis de cálcio otimizados para qualidade da casca dos ovos. |
 | **EQ-M**   | **Equinos**            | Ração equilibrada para cavalos de trabalho leve ou lazer, garantindo energia e boa digestibilidade. |
@@ -19,10 +19,81 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 | **AQ-T**   | **Tilápia**            | Formulação extrusada de alta digestibilidade, indicada para peixes em fase de crescimento e engorda. |
 
 
+## Tamanhos de Embalagem por Linha de Ração
+
+| Linha / Código   | Tamanho Padrão | Alternativa (alto volume) |
+|------------------|----------------|---------------------------|
+| **BC-G (Corte)** | 30 kg          | Big bag 1.000 kg          |
+| **BL-L (Leite)** | 30 kg          | Big bag 1.000 kg          |
+| **AV-P (Poedeira)** | 25 kg       | Big bag 1.000 kg          |
+| **EQ-M (Equinos)** | 25 kg        | —                         |
+| **OV-M (Ov/Capr)** | 30 kg        | Big bag 1.000 kg          |
+| **PA-PET (Pássaros)** | 15 kg     | —                         |
+| **AQ-T (Tilápia)** | 25 kg        | Big bag 1.000 kg          |
+
+
+## Preços por Linha de Ração
+
+###  BC-G (Bovino de Corte)
+| Linha              | Embalagem 30 kg | Big bag 1.000 kg |
+|--------------------|-----------------|------------------|
+| BC-G (Corte)       | R$ 78,00        | R$ 2.200         |
+| Preço por kg       | R$ 2,60/kg      | R$ 2,20/kg       |
+
+---
+
+###  BL-L (Vaca Leiteira)
+| Linha              | Embalagem 30 kg | Big bag 1.000 kg |
+|--------------------|-----------------|------------------|
+| BL-L (Leite)       | R$ 88,00        | R$ 2.480         |
+| Preço por kg       | R$ 2,93/kg      | R$ 2,48/kg       |
+
+---
+
+###  AV-P (Galinha Poedeira)
+| Linha              | Embalagem 25 kg | Big bag 1.000 kg |
+|--------------------|-----------------|------------------|
+| AV-P (Poedeira)    | R$ 75,00        | R$ 2.150         |
+| Preço por kg       | R$ 3,00/kg      | R$ 2,15/kg       |
+
+---
+
+###  EQ-M (Equinos)
+| Linha              | Embalagem 25 kg | Big bag 1.000 kg |
+|--------------------|-----------------|------------------|
+| EQ-M (Equinos)     | R$ 105,00       | Não produzido    |
+| Preço por kg       | R$ 4,20/kg      | —                |
+
+---
+
+###  OV-M (Ovinos/Caprinos)
+| Linha              | Embalagem 30 kg | Big bag 1.000 kg |
+|--------------------|-----------------|------------------|
+| OV-M (Ov/Capr)     | R$ 82,00        | R$ 2.300         |
+| Preço por kg       | R$ 2,73/kg      | R$ 2,30/kg       |
+
+---
+
+###  PA-PET (Pássaros)
+| Linha              | Embalagem 15 kg | Big bag 1.000 kg |
+|--------------------|-----------------|------------------|
+| PA-PET (Pássaros)  | R$ 98,00        | Não produzido    |
+| Preço por kg       | R$ 6,53/kg      | —                |
+
+---
+
+###  AQ-T (Tilápia)
+| Linha              | Embalagem 25 kg | Big bag 1.000 kg |
+|--------------------|-----------------|------------------|
+| AQ-T (Tilápia)     | R$ 80,00        | R$ 2.250         |
+| Preço por kg       | R$ 3,20/kg      | R$ 2,25/kg       |
+
+
+
 
 ## Composição das Rações (%)
 
-| Ingrediente            | BC-T Corte | BL-L Leite | AV-P Poedeira | EQ-M Equinos | OV-M Ov/Capr | PA-PET Pássaros | AQ-T Tilápia |
+| Ingrediente            | BC-G Corte | BL-L Leite | AV-P Poedeira | EQ-M Equinos | OV-M Ov/Capr | PA-PET Pássaros | AQ-T Tilápia |
 |------------------------|:----------:|:----------:|:-------------:|:------------:|:------------:|:---------------:|:------------:|
 | **Milho**              | 55%        | 34.5%      | 55%           | 25%          | 40%          | 45%             | 25%          |
 | **Farelo de soja**     | 18%        | 28%        | 20%           | 8%           | 20%          | 4%              | 35%          |
@@ -35,6 +106,36 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 | **Pré-mix vit/min**    | 1%         | 1%         | 1%            | 1%           | 1%           | 1%              | 2%           |
 
 
+## Quantidade de Ingredientes - Embalagem Tamanho Padrão
+
+| Ingrediente            | BC-G (30kg) | BL-L (30kg) | AV-P (25kg) | EQ-M (25kg) | OV-M (30kg) | PA-PET (15kg) | AQ-T (25kg) |
+| ---------------------- | :---------------: | :---------------: | :------------------: | :-----------------: | :-----------------: | :--------------------: | :-----------------: |
+| **Milho**              |      16.5 kg      |      10.4 kg      |        13.8 kg       |        6.3 kg       |       12.0 kg       |         6.8 kg         |        6.3 kg       |
+| **Farelo de soja**     |       5.4 kg      |       8.4 kg      |        5.0 kg        |        2.0 kg       |        6.0 kg       |         0.6 kg         |        8.8 kg       |
+| **Sorgo**              |       3.0 kg      |       2.9 kg      |        1.3 kg        |        0.0 kg       |        3.0 kg       |         0.0 kg         |        2.5 kg       |
+| **Farelo de trigo**    |       3.0 kg      |       4.5 kg      |        1.3 kg        |        5.0 kg       |        4.5 kg       |         1.2 kg         |        2.5 kg       |
+| **Aveia**              |       0.0 kg      |       1.5 kg      |        0.5 kg        |       10.0 kg       |        0.0 kg       |         3.8 kg         |        0.6 kg       |
+| **Farelo de girassol** |       0.9 kg      |       1.5 kg      |        0.0 kg        |        0.8 kg       |        3.0 kg       |         2.3 kg         |        2.5 kg       |
+| **Calcário calcítico** |       0.3 kg      |       0.5 kg      |        2.5 kg        |        0.3 kg       |        0.6 kg       |         0.2 kg         |        0.1 kg       |
+| **Óleo de soja**       |       0.6 kg      |       0.2 kg      |        0.5 kg        |        0.5 kg       |        0.6 kg       |         0.2 kg         |        1.3 kg       |
+| **Pré-mix vit/min**    |       0.3 kg      |       0.3 kg      |        0.3 kg        |        0.3 kg       |        0.3 kg       |         0.2 kg         |        0.5 kg       |
+
+## Quantidade de Ingredientes - Big Bag 1000 kg
+
+| Ingrediente            | BC-G | BL-L | AV-P | EQ-M | OV-M  | PA-PET | AQ-T |
+| ---------------------- | :--------: | :--------: | :-----------: | :----------: | :----------: | :-------------: | :----------: |
+| **Milho**              |   550 kg   |   345 kg   |     550 kg    |    -         |    400 kg    |      -          |    250 kg    |
+| **Farelo de soja**     |   180 kg   |   280 kg   |     200 kg    |     -        |    200 kg    |      -          |    350 kg    |
+| **Sorgo**              |   100 kg   |    95 kg   |     50 kg     |     -        |    100 kg    |       -         |    100 kg    |
+| **Farelo de trigo**    |   100 kg   |   150 kg   |     50 kg     |    -         |    150 kg    |      -          |    100 kg    |
+| **Aveia**              |    0 kg    |    50 kg   |     20 kg     |    -         |     0 kg     |      -          |     25 kg    |
+| **Farelo de girassol** |    30 kg   |    50 kg   |      0 kg     |     -        |    100 kg    |      -          |    100 kg    |
+| **Calcário calcítico** |    10 kg   |    15 kg   |     100 kg    |     -        |     20 kg    |      -          |     5 kg     |
+| **Óleo de soja**       |    20 kg   |    5 kg    |     20 kg     |     -        |     20 kg    |      -          |     50 kg    |
+| **Pré-mix vit/min**    |    10 kg   |    10 kg   |     10 kg     |     -        |     10 kg    |      -          |     20 kg    |
+
+
+
 ## Grãos Produzidos / Ingredientes
 
 | Grão        | Ingrediente
@@ -45,10 +146,19 @@ Neste trabalho, vamos resolver um problema de Programação Linear utilizando o 
 | **Trigo**   | Farelo de trigo            |
 | **Aveia**   | Aveia                      |
 | **Girassol**| Farelo de girassol         |
-| ---------   | Calcário calcítico         |
-| ---------   | Óleo de soja               |
-| ---------   | Pré-mix mineral vitamínico |
+| **Comprado**   | Calcário calcítico         |
+| **Comprado**   | Óleo de soja               |
+| **Comprado**   | Pré-mix mineral vitamínico |
 
+## Valores dos Ingredientes Compradoo
+
+| Ingrediente            | Preço (R$/kg) |
+|------------------------|---------------|
+| **Calcário calcítico** | R$ 0,40       |
+| **Óleo de soja**       | R$ 6,00       |
+| **Pré-mix vit/min**    | R$ 15,00      |
+
+ 
 
 ## Fazendas da Jaisson Rações.
 
@@ -306,11 +416,9 @@ $$
 
 | Tamanho   | Modelo            | Frota | Capacidade (t) | Custo (R$/km) | Custo por t.km (R$/t.km) |
 |-----------|-------------------|:-----:|:--------------:|:-------------:|:------------------------:|
-| Pequeno   | VW Delivery       |   3   |       5 t      |   R$ 2,50     |       R$ 0,50            |
-| Médio     | Mercedes Atego    |   2   |      10 t      |   R$ 3,50     |       R$ 0,35            |
-| Grande    | Iveco Tector      |   1   |      15 t      |   R$ 4,50     |       R$ 0,30            |
-
-
+| Pequeno   | VW Delivery       |   6   |       5 t      |   R$ 2,50     |       R$ 0,50            |
+| Médio     | Mercedes Atego    |   4   |      10 t      |   R$ 3,50     |       R$ 0,35            |
+| Grande    | Iveco Tector      |   2   |      15 t      |   R$ 4,50     |       R$ 0,30            |
 
 
 
@@ -322,7 +430,7 @@ $$
 - Todas as fazendas devem ter sua área total utilizada.
 - A quantidade mínima de produção de cada tipo de ração deve ser respeitada.
 - Cada caminhão só pode fazer uma viagem com um único destino por safra.
-
+- Nenhum grão pode ser deixado nas fazendas, a produção total deve ser transportada para a fábrica.
 
 
 ------------
