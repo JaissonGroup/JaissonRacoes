@@ -15,6 +15,8 @@ Utilizando os dados disponibilizados pela empresa, e respeitando suas regras de 
 - O custo da empresa com logística por fazenda.
 - O custo total da empresa com logística (todas as rotas)
 - O custo total da empresa com ingredientes comprados. (todas as rações)
+- O custo total de produção de cada tipo de ração. (cada linha e cada tamanho)
+- O custo total da produção de todas as rações.
 - O custo total de operação da empresa.
 - O faturamento total da empresa.
 - O lucro da empresa.
@@ -488,6 +490,31 @@ $$
 | **Aveia**    | R$ 1670,00 |
 | **Girassol** | R$ 2680,00 |
 
+
+## Custo da Produção na Fábrica (Tamanho Padrão)
+
+| Linha                 | Peso (kg) | Processo (R$/kg) | Embalagem (R$/un) | **Custo por item (R$)** |
+| --------------------- | --------: | ---------------: | ----------------: | ----------------------: |
+| **BC-G (Corte)**      |        30 |             0,10 |              5,00 |                **8,00** |
+| **BL-L (Leite)**      |        30 |             0,11 |              5,00 |                **8,30** |
+| **AV-P (Poedeira)**   |        25 |             0,12 |              4,50 |                **7,50** |
+| **EQ-M (Equinos)**    |        25 |             0,12 |              4,50 |                **7,50** |
+| **OV-M (Ov/Capr)**    |        30 |             0,11 |              5,00 |                **8,30** |
+| **PA-PET (Pássaros)** |        15 |             0,16 |              4,00 |                **6,40** |
+| **AQ-T (Tilápia)**    |        25 |             0,24 |              4,50 |               **10,50** |
+
+
+## Custo da Produção na Fábrica (Big Bag)
+
+| Linha                 | Processo (R$/kg) | Embalagem (R$/bb) | **Custo por big bag (R$)** |
+| --------------------- | ---------------: | ----------------: | -------------------------: |
+| **BC-G (Corte)**      |             0,10 |             95,00 |                 **195,00** |
+| **BL-L (Leite)**      |             0,11 |             95,00 |                 **205,00** |
+| **AV-P (Poedeira)**   |             0,12 |             95,00 |                 **215,00** |
+| **EQ-M (Equinos)**    |                — |                 — |                      **—** |
+| **OV-M (Ov/Capr)**    |             0,11 |             95,00 |                 **205,00** |
+| **PA-PET (Pássaros)** |                — |                 — |                      **—** |
+| **AQ-T (Tilápia)**    |             0,24 |             95,00 |                 **335,00** |
 
 
 --------
