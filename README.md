@@ -1,4 +1,6 @@
-# Jaisson Rações
+<img width="650" height="650" alt="jaissonracoes-logo" src="https://github.com/user-attachments/assets/d5da9ed4-0db6-4bd3-95da-0df530f593dc" />
+
+
 ### Trabalho de Pesquisa Operacional com o Professor Jaisson
 Neste trabalho, vamos resolver um problema de Programação Linear utilizando o método simplex. O problema será modelado a partir de uma empresa fictícia de Rações.
 
