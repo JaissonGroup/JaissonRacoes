@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agricultura — Jaisson Rações</title>
+  <meta name="description" content="Conheça os grãos produzidos pela Jaisson Rações: milho, soja, sorgo, trigo, aveia e girassol. Perfis agronômicos, importância e uso nas rações." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="jaissonracoes-logo.png" />
+  <style>
+    .grains-hero{padding:56px 0 24px;background:
+      radial-gradient(800px 400px at -10% 0%, rgba(254,198,51,.18), transparent 60%),
+      radial-gradient(800px 400px at 110% 0%, rgba(19,116,49,.10), transparent 60%)}
+    .grains-hero .pill{background:var(--yellow);padding:6px 12px;border-radius:999px;font-weight:800}
+    .grains-hero h1{margin:10px 0 6px;font-size:clamp(26px,4.6vw,42px)}
+    .grains-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;padding:20px 0 60px}
+    .grain-card{background:#fff;border:1px solid #eef2f7;border-radius:20px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:.3s ease}
+    .grain-card:hover{transform:translateY(-3px)}
+    .grain-media{aspect-ratio:16/10;background:var(--ph) center/cover no-repeat}
+    .grain-info{padding:18px}
+    .grain-info h3{margin:0 0 6px;font-size:22px}
+    .grain-tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+    .grain-tags span{font-size:12px;background:#f2f2f2;border-radius:20px;padding:3px 8px}
+    table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+    th,td{border:1px solid #e5e7eb;padding:6px 8px;text-align:center}
+    th{background:#f9fafb;font-weight:700}
+    .uses{margin-top:10px;font-size:13px;color:var(--ink-2)}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" /></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+      <nav class="main-nav"><ul>
+        <li><a href="index.html#areas">Áreas</a></li>
+        <li><a href="fazendas.html">Fazendas</a></li>
+        <li><a class="active" href="agricultura.html">Agricultura</a></li>
+        <li><a href="logistica.html">Logística</a></li>
+        <li><a href="producao.html">Produção</a></li>
+        <li><a href="vendas.html">Vendas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+      </ul></nav>
+    </div>
+  </header>
+
+  <section class="grains-hero">
+    <div class="container">
+      <span class="pill">Do Campo à Fábrica</span>
+      <h1>Grãos produzidos pela Jaisson Rações</h1>
+      <p>Seis culturas estratégicas formam a base das nossas rações: milho, soja, sorgo, trigo, aveia e girassol.</p>
+    </div>
+  </section>
+
+  <section class="container grains-grid">
+    <!-- Milho -->
+    <article class="grain-card">
+      <div class="grain-media" style="--ph:url('https://images.unsplash.com/photo-1554402100-8d1d9f3dff80?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-info">
+        <h3>🌽 Milho</h3>
+        <div class="grain-tags"><span>Alta água</span><span>Básico</span><span>Argilosa</span><span>Quente</span><span>Alta radiação</span><span>Alta fertilidade</span></div>
+        <table><tr><th>Fator</th><th>Importância</th></tr>
+          <tr><td>Água</td><td>22%</td></tr><tr><td>pH</td><td>13%</td></tr><tr><td>Textura</td><td>13%</td></tr><tr><td>Temperatura</td><td>22%</td></tr><tr><td>Radiação</td><td>15%</td></tr><tr><td>Fertilidade</td><td>15%</td></tr>
+        </table>
+        <p class="uses"><strong>Usado em:</strong> BC-G, BL-L, AV-P, EQ-M, OV-M, PA-PET, AQ-T</p>
+      </div>
+    </article>
+
+    <!-- Soja -->
+    <article class="grain-card">
+      <div class="grain-media" style="--ph:url('https://plus.unsplash.com/premium_photo-1661815691473-5efc09a055e4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-info">
+        <h3>🌱 Soja</h3>
+        <div class="grain-tags"><span>Muita água</span><span>Básico</span><span>Argilosa</span><span>Quente</span><span>Alta radiação</span><span>Alta fertilidade</span></div>
+        <table><tr><th>Fator</th><th>Importância</th></tr>
+          <tr><td>Água</td><td>20%</td></tr><tr><td>pH</td><td>17%</td></tr><tr><td>Textura</td><td>13%</td></tr><tr><td>Temperatura</td><td>20%</td></tr><tr><td>Radiação</td><td>16%</td></tr><tr><td>Fertilidade</td><td>14%</td></tr>
+        </table>
+        <p class="uses"><strong>Usado em:</strong> BC-G, BL-L, AV-P, EQ-M, OV-M, PA-PET, AQ-T</p>
+      </div>
+    </article>
+
+    <!-- Sorgo -->
+    <article class="grain-card">
+      <div class="grain-media" style="--ph:url('https://www.ffa.org/wp-content/uploads/2025/01/Sorghum-Landscape-scaled.jpg')"></div>
+      <div class="grain-info">
+        <h3>🌾 Sorgo</h3>
+        <div class="grain-tags"><span>Pouca água</span><span>Básico</span><span>Arenosa</span><span>Quente</span><span>Alta radiação</span><span>Média fertilidade</span></div>
+        <table><tr><th>Fator</th><th>Importância</th></tr>
+          <tr><td>Água</td><td>13%</td></tr><tr><td>pH</td><td>13%</td></tr><tr><td>Textura</td><td>20%</td></tr><tr><td>Temperatura</td><td>22%</td></tr><tr><td>Radiação</td><td>16%</td></tr><tr><td>Fertilidade</td><td>16%</td></tr>
+        </table>
+        <p class="uses"><strong>Usado em:</strong> BC-G, BL-L, AV-P, OV-M, AQ-T</p>
+      </div>
+    </article>
+
+    <!-- Trigo -->
+    <article class="grain-card">
+      <div class="grain-media" style="--ph:url('https://images.unsplash.com/photo-1437252611977-07f74518abd7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-info">
+        <h3>🌾 Trigo</h3>
+        <div class="grain-tags"><span>Média água</span><span>Ácido</span><span>Argilosa</span><span>Frio</span><span>Média radiação</span><span>Média fertilidade</span></div>
+        <table><tr><th>Fator</th><th>Importância</th></tr>
+          <tr><td>Água</td><td>18%</td></tr><tr><td>pH</td><td>18%</td></tr><tr><td>Textura</td><td>14%</td></tr><tr><td>Temperatura</td><td>22%</td></tr><tr><td>Radiação</td><td>16%</td></tr><tr><td>Fertilidade</td><td>12%</td></tr>
+        </table>
+        <p class="uses"><strong>Usado em:</strong> BC-G, BL-L, AV-P, EQ-M, OV-M, PA-PET, AQ-T</p>
+      </div>
+    </article>
+
+    <!-- Aveia -->
+    <article class="grain-card">
+      <div class="grain-media" style="--ph:url('https://plus.unsplash.com/premium_photo-1670909649532-d1d68ee475cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-info">
+        <h3>🌾 Aveia</h3>
+        <div class="grain-tags"><span>Média água</span><span>Ácido</span><span>Argilosa</span><span>Frio</span><span>Média radiação</span><span>Média fertilidade</span></div>
+        <table><tr><th>Fator</th><th>Importância</th></tr>
+          <tr><td>Água</td><td>18%</td></tr><tr><td>pH</td><td>18%</td></tr><tr><td>Textura</td><td>14%</td></tr><tr><td>Temperatura</td><td>22%</td></tr><tr><td>Radiação</td><td>16%</td></tr><tr><td>Fertilidade</td><td>12%</td></tr>
+        </table>
+        <p class="uses"><strong>Usado em:</strong> BL-L, AV-P, EQ-M, PA-PET, AQ-T</p>
+      </div>
+    </article>
+
+    <!-- Girassol -->
+    <article class="grain-card">
+      <div class="grain-media" style="--ph:url('https://images.unsplash.com/photo-1599369553272-29f89a9d4696?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-info">
+        <h3>🌻 Girassol</h3>
+        <div class="grain-tags"><span>Pouca água</span><span>Básico</span><span>Arenosa</span><span>Quente</span><span>Alta radiação</span><span>Média fertilidade</span></div>
+        <table><tr><th>Fator</th><th>Importância</th></tr>
+          <tr><td>Água</td><td>13%</td></tr><tr><td>pH</td><td>13%</td></tr><tr><td>Textura</td><td>17%</td></tr><tr><td>Temperatura</td><td>20%</td></tr><tr><td>Radiação</td><td>17%</td></tr><tr><td>Fertilidade</td><td>20%</td></tr>
+        </table>
+        <p class="uses"><strong>Usado em:</strong> BL-L, EQ-M, OV-M, PA-PET, AQ-T</p>
+      </div>
+    </article>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="f-col">
+        <img src="jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+        <p class="f-copy">© <span id="year"></span> Jaisson Rações. Todos os direitos reservados.</p>
+      </div>
+      <nav class="f-col f-nav">
+        <a href="fazendas.html">Fazendas</a>
+        <a href="agricultura.html" aria-current="page">Agricultura</a>
+        <a href="logistica.html">Logística</a>
+        <a href="producao.html">Produção</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="sustentabilidade.html">Sustentabilidade</a>
+      </nav>
+      <div class="f-col"><p class="f-small">Pirabeiraba – SC • codykoinabox+jaissonracoes@gmail.com</p></div>
+    </div>
+    <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>
