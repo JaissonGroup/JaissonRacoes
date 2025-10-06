@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jaisson Rações — Agro que Move o Brasil</title>
+  <meta name="description" content="Jaisson Rações: do campo ao cocho. Fazendas, agricultura, logística, produção e vendas de ração. Sustentabilidade no centro." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/website/img/jaissonracoes-logo.png" />
+</head>
+<body>
+  <!-- Header fixo com menu responsivo (sem JS, usa checkbox) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <!-- Troque o src abaixo pela sua logo (ex: /img/jaissonracoes-logo.png) -->
+        <img src="/website/img/jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" />
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="#areas">Áreas</a></li>
+          <li><a href="fazendas.html">Fazendas</a></li>
+          <li><a href="agricultura.html">Agricultura</a></li>
+          <li><a href="logistica.html">Logística</a></li>
+          <li><a href="producao.html">Produção</a></li>
+          <li><a href="vendas.html">Vendas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero com foto de impacto (placeholder) -->
+  <section class="hero">
+    <!-- Substitua a imagem de fundo no CSS (.hero::before) ou use style inline abaixo -->
+    <div class="container hero-content">
+      <span class="pill">Orgulho do Agro Brasileiro</span>
+      <h1>Do grão à nutrição animal,<br/> ponta a ponta com eficiência.</h1>
+      <p>
+        Integramos fazendas, agricultura, logística, produção e vendas de ração — com sustentabilidade
+        e tecnologia — para alimentar resultados no campo.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-fill" href="#areas">Conheça nossas áreas</a>
+        <a class="btn btn-outline" href="sobre.html">Sobre a Jaisson</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra de confiança/valores (inspiração corporativa) -->
+  <section class="trustbar" aria-label="Diferenciais">
+    <div class="container trustbar-grid">
+      <div class="trust-item">
+        <div class="icn" aria-hidden="true">🌽</div>
+        <strong>Integração do Campo</strong>
+        <span>Da semente ao cocho</span>
+      </div>
+      <div class="trust-item">
+        <div class="icn" aria-hidden="true">🚚</div>
+        <strong>Logística Própria</strong>
+        <span>Rota otimizada e rastreável</span>
+      </div>
+      <div class="trust-item">
+        <div class="icn" aria-hidden="true">🏭</div>
+        <strong>Produção de Rações</strong>
+        <span>Qualidade e padronização</span>
+      </div>
+      <div class="trust-item">
+        <div class="icn" aria-hidden="true">🌱</div>
+        <strong>Sustentabilidade</strong>
+        <span>Compromisso com o futuro</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas de negócio (cards clicáveis com imagem de fundo) -->
+  <section id="areas" class="areas">
+    <div class="container">
+      <header class="section-head">
+        <h2>Nossas áreas de negócio</h2>
+        <p>Explore como a Jaisson Rações atua em toda a cadeia do agronegócio.</p>
+      </header>
+
+      <div class="areas-grid">
+        <!-- Cada card aceita uma imagem de fundo via style="--bg: url(...)" -->
+        <a class="area-card" href="fazendas.html" style="--bg: url('https://plus.unsplash.com/premium_photo-1674624682288-085eff4f98da?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+          <div class="area-card__layer">
+            <span class="tag">Setor</span>
+            <h3>Fazendas</h3>
+            <p>Terras produtivas, manejo responsável e tecnologia de campo.</p>
+          </div>
+        </a>
+
+        <a class="area-card" href="agricultura.html" style="--bg: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+          <div class="area-card__layer">
+            <span class="tag">Setor</span>
+            <h3>Agricultura</h3>
+            <p>Grãos selecionados com foco em produtividade e qualidade.</p>
+          </div>
+        </a>
+
+        <a class="area-card" href="logistica.html" style="--bg: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+          <div class="area-card__layer">
+            <span class="tag">Setor</span>
+            <h3>Logística</h3>
+            <p>Transporte ágil e seguro do campo à fábrica e ao cliente.</p>
+          </div>
+        </a>
+
+        <a class="area-card" href="producao.html" style="--bg: url('https://images.unsplash.com/photo-1556114846-f753bec8a9f5?q=80&w=1239&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+          <div class="area-card__layer">
+            <span class="tag">Setor</span>
+            <h3>Produção</h3>
+            <p>Fábrica moderna, processos padronizados e controle rigoroso.</p>
+          </div>
+        </a>
+
+        <a class="area-card" href="vendas.html" style="--bg: url('https://images.unsplash.com/photo-1682536192307-c25211b1d4ac?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+          <div class="area-card__layer">
+            <span class="tag">Setor</span>
+            <h3>Vendas</h3>
+            <p>Portfólio completo para corte, leite, aves, equinos e mais.</p>
+          </div>
+        </a>
+
+        <a class="area-card" href="sustentabilidade.html" style="--bg: url('https://plus.unsplash.com/premium_photo-1678743133491-dc8b8713daa3?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+          <div class="area-card__layer">
+            <span class="tag">Compromisso</span>
+            <h3>Sustentabilidade</h3>
+            <p>Práticas ambientais e sociais para impacto positivo real.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faixa sustentabilidade (callout) -->
+  <section class="cta-sustain">
+    <div class="container cta-sustain-inner">
+      <div class="cta-copy">
+        <h3>Sustentabilidade como estratégia</h3>
+        <p>
+          Redução de emissões, cuidado com o solo e programas sociais locais.
+          Crescer é também regenerar.
+        </p>
+      </div>
+      <a class="btn btn-fill alt" href="sustentabilidade.html">Nossas iniciativas</a>
+    </div>
+  </section>
+
+  <!-- Sessão Sobre (resumo) -->
+  <section class="about">
+    <div class="container about-grid">
+      <div class="about-media" style="--ph: url('/website/img/jaissonracoes-logo.png');">
+        <span class="img-ph" role="img" aria-label="Foto institucional / fábrica (placeholder)"></span>
+      </div>
+      <div class="about-text">
+        <h2>Sobre a Jaisson Rações</h2>
+        <p>
+          Uma corporação integrada do agro brasileiro — conectando fazendas,
+          agricultura, logística, produção e vendas de ração. Operamos com
+          governança, inovação e foco no cliente.
+        </p>
+        <ul class="bullets">
+          <li>Qualidade e padronização em todas as linhas</li>
+          <li>Rastreabilidade ponta a ponta na cadeia</li>
+          <li>Compromisso com pessoas e com o meio ambiente</li>
+        </ul>
+        <a class="btn btn-outline" href="sobre.html">Conheça nossa história</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="f-col">
+        <img src="/website/img/jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+        <p class="f-copy">© <span id="year"></span> Jaisson Rações. Todos os direitos reservados.</p>
+      </div>
+      <nav class="f-col f-nav" aria-label="Rodapé">
+        <a href="fazendas.html">Fazendas</a>
+        <a href="agricultura.html">Agricultura</a>
+        <a href="logistica.html">Logística</a>
+        <a href="producao.html">Produção</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="sustentabilidade.html">Sustentabilidade</a>
+      </nav>
+      <div class="f-col">
+        <p class="f-small">Pirabeiraba – SC • codykoinabox+jaissonracoes@gmail.com</p>
+      </div>
+    </div>
+    <script>
+      // só para o ano no rodapé (sem depender de JS externo)
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
