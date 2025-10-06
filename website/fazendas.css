@@ -1,0 +1,226 @@
+/* =========================
+   Fazendas — Jaisson Rações
+   Depende de styles.css (paleta e base)
+   ========================= */
+
+:root{
+  --green: #137431;
+  --yellow: #FEC633;
+  --ink: #0f172a;
+  --ink-2: #334155;
+  --muted: #6b7280;
+  --radius: 18px;
+  --shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+
+/* Intro */
+.farms-hero{
+  padding: 56px 0 20px;
+  background:
+    radial-gradient(900px 400px at -10% 0%, rgba(254,198,51,.18), transparent 60%),
+    radial-gradient(900px 400px at 110% 0%, rgba(19,116,49,.10), transparent 60%);
+}
+.farms-hero .pill{
+  display:inline-block; background:var(--yellow); color:#1a1a1a;
+  padding:6px 12px; border-radius:999px; font-weight:800;
+}
+.farms-hero h1{ margin:10px 0 6px; font-size: clamp(26px, 4.6vw, 42px) }
+.farms-hero p{ margin:0 0 14px; color:var(--ink-2) }
+
+.stats{
+  display:flex; gap:18px; flex-wrap:wrap; margin-top:10px;
+}
+.stat{
+  background:#fff; border:1px solid #eef2f7; border-radius:14px; padding:10px 14px;
+  box-shadow: var(--shadow);
+}
+.stat strong{ display:block; font-size:18px }
+.stat span{ font-size:12px; color:var(--muted) }
+
+/* Mapa */
+.mapa-brasil{ padding: 28px 0 10px }
+.section-head h2{ margin-bottom:6px }
+.map-wrapper{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--map-img) center/contain no-repeat, #f8fafc;
+  border:1px solid #eef2f7; border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+/* Pin genérico */
+.pin{
+  position:absolute;
+  left: var(--x); top: var(--y);
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: 0; padding: 0; cursor: pointer;
+  display:flex; flex-direction: column; align-items: center; gap:4px;
+}
+.pin .dot{
+  width:14px; height:14px; border-radius:999px; background: var(--green);
+  border: 2px solid #ffffff; box-shadow: 0 0 0 3px rgba(19,116,49,.18), 0 2px 8px rgba(0,0,0,.15);
+  transition: transform .15s ease;
+}
+
+.pin .label{
+  background:#fff; color:#0f2f1b; font-weight:700; font-size:12px;
+  padding:4px 8px; border-radius:10px; border:1px solid #e2e8f0;
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  transform: translateY(0);
+  transition: .2s ease;
+  white-space: nowrap;
+}
+.pin:hover .dot{ transform: scale(1.15) }
+.pin.active .dot{ background: var(--yellow); }
+.pin.active .label{ border-color: #fed766 }
+
+.map-legend{
+  display:flex; gap:14px; align-items:center; justify-content:flex-end;
+  font-size:12px; color:var(--muted); margin-top:10px;
+}
+.legend-dot{
+  display:inline-block; width:10px; height:10px; border-radius:999px; margin-right:6px;
+  background: var(--green);
+}
+.legend-dot.small{ box-shadow: inset 0 0 0 2px #fff, 0 0 0 3px rgba(19,116,49,.2) }
+.legend-dot.medium{ background: linear-gradient(45deg, var(--green), #1c8f3e) }
+.legend-dot.large{ background: linear-gradient(45deg, var(--yellow), #ffd34f) }
+
+/* Lista */
+.lista-fazendas{ padding: 24px 0 64px }
+.farm-card{
+  display:grid; grid-template-columns: 1.1fr .9fr; gap:20px;
+  padding:16px; border:1px solid #eef2f7; border-radius:20px; background:#fff;
+  box-shadow: var(--shadow); margin: 14px 0;
+  scroll-margin-top: 90px; /* para âncora ficar boa abaixo do header fixo */
+}
+.farm-card .farm-media{
+  width:100%; aspect-ratio: 16/10; border-radius:16px;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.30)),
+    var(--ph) center/cover no-repeat;
+}
+.farm-info h3{ margin: 2px 0 6px; font-size: 22px }
+.farm-info .meta{ list-style:none; padding:0; margin:0 0 8px; color:var(--ink-2) }
+.farm-info .meta li{ margin: 2px 0 }
+.farm-info p{ margin:0 }
+
+/* Cores por porte (borda lateral sutil) */
+.farm-card.size-small{ border-left: 5px solid #1e88e5 }
+.farm-card.size-medium{ border-left: 5px solid #1c8f3e }
+.farm-card.size-large{ border-left: 5px solid var(--yellow) }
+
+/* Total */
+.total-strip{
+  margin-top: 18px; background: #0f2f1b; color: #fff;
+  padding: 12px 16px; border-radius: 14px; font-weight: 700;
+}
+
+/* Responsividade */
+@media (max-width: 980px){
+  .farm-card{ grid-template-columns: 1fr }
+}
+
+/* === DOT base === */
+.map-wrapper .pin .dot {
+  display: inline-block;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, .25);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.map-wrapper .pin:hover .dot {
+  transform: scale(1.25);
+}
+
+/* === Cores e tamanhos por porte === */
+.pin.size-small  .dot { width: 10px; height: 10px; background: #1e88e5; } /* Azul → pequena */
+.pin.size-medium .dot { width: 14px; height: 14px; background: #2e7d32; } /* Verde → média */
+.pin.size-large  .dot { width: 18px; height: 18px; background: #f6c90e; } /* Amarela → grande */
+
+/* === Label (oculta até passar o mouse) === */
+.map-wrapper .pin {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+}
+
+.map-wrapper .pin .label {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 2px 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.map-wrapper .pin:hover .label {
+  opacity: 1;
+  visibility: visible;
+  top: -38px;
+}
+
+/* === Legenda === */
+.map-legend {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.map-legend .legend-dot {
+  display: inline-block;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.25);
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.map-legend .legend-dot.small  { width: 10px; height: 10px; background: #1e88e5; } /* Azul */
+.map-legend .legend-dot.medium { width: 14px; height: 14px; background: #2e7d32; } /* Verde */
+.map-legend .legend-dot.large  { width: 18px; height: 18px; background: #f6c90e; } /* Amarela */
+
+.farm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f2f2f2;
+  color: #333;
+  transition: all 0.2s ease;
+}
+.tag:hover {
+  transform: scale(1.05);
+}
+
+/* cores por tipo */
+.tag.water { background: #d0ebff; }   /* azul claro */
+.tag.ph { background: #ffe8cc; }      /* laranja claro */
+.tag.soil { background: #e9fac8; }    /* verde claro */
+.tag.temp { background: #ffe3e3; }    /* vermelho claro */
+.tag.light { background: #fff3bf; }   /* amarelo claro */
+.tag.fert { background: #e7f5ff; }    /* azul clarinho */

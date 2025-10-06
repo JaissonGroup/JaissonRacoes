@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fazendas — Jaisson Rações</title>
+  <meta name="description" content="Conheça as fazendas da Jaisson Rações: localização no mapa do Brasil, área e porte." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="fazendas.css" />
+  <link rel="icon" href="/website/img/jaissonracoes-logo.png" />
+</head>
+<body>
+  <!-- Header (mesmo da landing) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="/website/img/jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" />
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html#areas">Áreas</a></li>
+          <li><a class="active" href="fazendas.html">Fazendas</a></li>
+          <li><a href="agricultura.html">Agricultura</a></li>
+          <li><a href="logistica.html">Logística</a></li>
+          <li><a href="producao.html">Produção</a></li>
+          <li><a href="vendas.html">Vendas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="farms-hero">
+    <div class="container">
+      <span class="pill">Nossas Terras</span>
+      <h1>Fazendas da Jaisson Rações</h1>
+      <p>Presença no Sul e Centro-Oeste do Brasil, unindo manejo responsável, produtividade e tecnologia de campo.</p>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>7.100 ha</strong>
+          <span>Área total</span>
+        </div>
+        <div class="stat">
+          <strong>6 fazendas</strong>
+          <span>Em 6 cidades</span>
+        </div>
+        <div class="stat">
+          <strong>Sul &amp; Centro-Oeste</strong>
+          <span>Regiões</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mapa do Brasil com marcadores -->
+  <section class="mapa-brasil" aria-labelledby="mapa-title">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="mapa-title">Mapa das Fazendas</h2>
+        <p>Clique em um marcador para rolar até a fazenda correspondente.</p>
+      </header>
+
+      <!-- Troque a imagem do mapa pelo seu arquivo local -->
+      <div class="map-wrapper" style="--map-img: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Brazil_Blank_Map.svg/2325px-Brazil_Blank_Map.svg.png');">
+        <!-- Marcadores (posições revisadas e tamanhos corretos) -->
+<button class="pin size-small" style="--x:54%; --y:84%;" data-target="#fazenda-maruim" aria-label="Fazenda Maruim (Corupá–SC)">
+  <span class="dot"></span><span class="label">Fazenda Maruim</span>
+</button>
+
+<button class="pin size-small" style="--x:49%; --y:89%;" data-target="#fazenda-gaucha" aria-label="Fazenda Gaúcha (Passo Fundo–RS)">
+  <span class="dot"></span><span class="label">Fazenda Gaúcha</span>
+</button>
+
+<button class="pin size-small" style="--x:52%; --y:80%;" data-target="#fazenda-campos" aria-label="Fazenda Campos Gerais (Ponta Grossa–PR)">
+  <span class="dot"></span><span class="label">Fazenda Campos Gerais</span>
+</button>
+
+<button class="pin size-medium" style="--x:46%; --y:72%;" data-target="#fazenda-pantanal" aria-label="Fazenda Pantanal (Dourados–MS)">
+  <span class="dot"></span><span class="label">Fazenda Pantanal</span>
+</button>
+
+<button class="pin size-large" style="--x:45%; --y:46%;" data-target="#fazenda-cerrado" aria-label="Fazenda Cerrado (Sorriso–MT)">
+  <span class="dot"></span><span class="label">Fazenda Cerrado</span>
+</button>
+
+<button class="pin size-large" style="--x:52%; --y:58%;" data-target="#fazenda-capital" aria-label="Fazenda Capital (Rio Verde–GO)">
+  <span class="dot"></span><span class="label">Fazenda Capital</span>
+</button>
+
+
+      <div class="map-legend">
+        <span class="legend-dot small"></span> Pequena
+        <span class="legend-dot medium"></span> Média
+        <span class="legend-dot large"></span> Grande
+      </div>
+    </div>
+  </section>
+
+  <!-- Lista de fazendas (um bloco por fazenda) -->
+  <section class="lista-fazendas">
+    <div class="container">
+
+      <!-- Maruim -->
+<article id="fazenda-maruim" class="farm-card size-small">
+  <div class="farm-media" style="--ph: url('https://images.unsplash.com/photo-1653007574493-edad758220d8?q=80&w=1170&auto=format&fit=crop');"></div>
+  <div class="farm-info">
+    <h3>Fazenda Maruim</h3>
+    <ul class="meta">
+      <li><strong>Localização:</strong> Corupá – SC</li>
+      <li><strong>Área:</strong> 300 ha</li>
+      <li><strong>Porte:</strong> Pequena</li>
+    </ul>
+    <div class="farm-tags">
+      <span class="tag water">💧 Alta água</span>
+      <span class="tag ph">🧪 Ácido</span>
+      <span class="tag soil">🌱 Argilosa</span>
+      <span class="tag temp">🌡️ Frio</span>
+      <span class="tag light">☀️ Baixa radiação</span>
+      <span class="tag fert">⚙️ Média fertilidade</span>
+    </div>
+    <p>A primeira fazenda da Jaisson Rações, com 300 hectares de solo argiloso e um clima frio e equilibrado. Produz o melhor da regiao.</p>
+  </div>
+</article>
+
+<!-- Gaúcha -->
+<article id="fazenda-gaucha" class="farm-card size-small">
+  <div class="farm-media" style="--ph: url('https://images.unsplash.com/photo-1675626906884-7b1fc0e1293c?q=80&w=1332&auto=format&fit=crop');"></div>
+  <div class="farm-info">
+    <h3>Fazenda Gaúcha</h3>
+    <ul class="meta">
+      <li><strong>Localização:</strong> Passo Fundo – RS</li>
+      <li><strong>Área:</strong> 400 ha</li>
+      <li><strong>Porte:</strong> Pequena</li>
+    </ul>
+    <div class="farm-tags">
+      <span class="tag water">💧 Alta água</span>
+      <span class="tag ph">🧪 Ácido</span>
+      <span class="tag soil">🌱 Argilosa</span>
+      <span class="tag temp">🌡️ Frio</span>
+      <span class="tag light">☀️ Média radiação</span>
+      <span class="tag fert">⚙️ Alta fertilidade</span>
+    </div>
+    <p>No coracao gaucho, a fazenda Gaúcha, com 400 hectares de solo argiloso e um clima frio e equilibrado. Produz graos tri bons tche.</p>
+  </div>
+</article>
+
+<!-- Campos Gerais -->
+<article id="fazenda-campos" class="farm-card size-small">
+  <div class="farm-media" style="--ph: url('https://images.unsplash.com/photo-1622353133218-825cfebb6844?q=80&w=765&auto=format&fit=crop');"></div>
+  <div class="farm-info">
+    <h3>Fazenda Campos Gerais</h3>
+    <ul class="meta">
+      <li><strong>Localização:</strong> Ponta Grossa – PR</li>
+      <li><strong>Área:</strong> 500 ha</li>
+      <li><strong>Porte:</strong> Pequena</li>
+    </ul>
+    <div class="farm-tags">
+      <span class="tag water">💧 Média água</span>
+      <span class="tag ph">🧪 Ácido</span>
+      <span class="tag soil">🌱 Argilosa</span>
+      <span class="tag temp">🌡️ Frio</span>
+      <span class="tag light">☀️ Média radiação</span>
+      <span class="tag fert">⚙️ Média fertilidade</span>
+    </div>
+    <p>Nos campos Gerais do Parana, a fazenda Campos Gerais, com 500 hectares de solo argiloso e um clima frio e equilibrado. Produz muitos graos.</p>
+  </div>
+</article>
+
+<!-- Pantanal -->
+<article id="fazenda-pantanal" class="farm-card size-medium">
+  <div class="farm-media" style="--ph: url('https://images.unsplash.com/photo-1672556888087-e0fed3c2aeb7?q=80&w=1073&auto=format&fit=crop');"></div>
+  <div class="farm-info">
+    <h3>Fazenda Pantanal</h3>
+    <ul class="meta">
+      <li><strong>Localização:</strong> Dourados – MS</li>
+      <li><strong>Área:</strong> 1.200 ha</li>
+      <li><strong>Porte:</strong> Média</li>
+    </ul>
+    <div class="farm-tags">
+      <span class="tag water">💧 Alta água</span>
+      <span class="tag ph">🧪 Básico</span>
+      <span class="tag soil">🌱 Arenosa</span>
+      <span class="tag temp">🌡️ Quente</span>
+      <span class="tag light">☀️ Alta radiação</span>
+      <span class="tag fert">⚙️ Baixa fertilidade</span>
+    </div>
+    <p>Rodeado de pantano, jacares e oncas pintadas, a fazenda Pantanal, com 1.200 hectares de solo arenoso e um clima quente e radiação intensa. Destino perfeito para quem quer plantar graos e pescar nas horas vagas.</p>
+  </div>
+</article>
+
+<!-- Cerrado -->
+<article id="fazenda-cerrado" class="farm-card size-large">
+  <div class="farm-media" style="--ph: url('https://images.unsplash.com/photo-1701525864905-0aba21487e6d?q=80&w=1170&auto=format&fit=crop');"></div>
+  <div class="farm-info">
+    <h3>Fazenda Cerrado</h3>
+    <ul class="meta">
+      <li><strong>Localização:</strong> Sorriso – MT</li>
+      <li><strong>Área:</strong> 2.500 ha</li>
+      <li><strong>Porte:</strong> Grande</li>
+    </ul>
+    <div class="farm-tags">
+      <span class="tag water">💧 Média água</span>
+      <span class="tag ph">🧪 Básico</span>
+      <span class="tag soil">🌱 Arenosa</span>
+      <span class="tag temp">🌡️ Quente</span>
+      <span class="tag light">☀️ Alta radiação</span>
+      <span class="tag fert">⚙️ Baixa fertilidade</span>
+    </div>
+    <p>Na beira da floresta amazonica, a fazenda Cerrado, com 2.500 hectares de solo arenoso e um clima quente e radiação intensa. Destino perfeito para quem quer desmatar a floresta mais importante do mundo em troca de mais espaco para agricultura.</p>
+  </div>
+</article>
+
+<!-- Capital -->
+<article id="fazenda-capital" class="farm-card size-large">
+  <div class="farm-media" style="--ph: url('https://images.unsplash.com/photo-1663555667687-6be5706464c5?q=80&w=1332&auto=format&fit=crop');"></div>
+  <div class="farm-info">
+    <h3>Fazenda Capital</h3>
+    <ul class="meta">
+      <li><strong>Localização:</strong> Rio Verde – GO</li>
+      <li><strong>Área:</strong> 2.200 ha</li>
+      <li><strong>Porte:</strong> Grande</li>
+    </ul>
+    <div class="farm-tags">
+      <span class="tag water">💧 Média água</span>
+      <span class="tag ph">🧪 Básico</span>
+      <span class="tag soil">🌱 Arenosa</span>
+      <span class="tag temp">🌡️ Quente</span>
+      <span class="tag light">☀️ Alta radiação</span>
+      <span class="tag fert">⚙️ Baixa fertilidade</span>
+    </div>
+    <p>Perto da Capital Brasilia, a fazenda Capital nao foi criada por Juscelino Kubscheck, mas sim por Jaisson, que desbravou o velho oeste brasileiro em busca de ricas terras para seus graos.</p>
+  </div>
+</article>
+
+
+
+      <!-- Total -->
+      <div class="total-strip">
+        <strong>Área total:</strong> 7.100 ha
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="f-col">
+        <img src="/website/img/jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+        <p class="f-copy">© <span id="year"></span> Jaisson Rações. Todos os direitos reservados.</p>
+      </div>
+      <nav class="f-col f-nav" aria-label="Rodapé">
+        <a href="fazendas.html" aria-current="page">Fazendas</a>
+        <a href="agricultura.html">Agricultura</a>
+        <a href="logistica.html">Logística</a>
+        <a href="producao.html">Produção</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="sustentabilidade.html">Sustentabilidade</a>
+      </nav>
+      <div class="f-col">
+        <p class="f-small">Pirabeiraba – SC • codykoinabox+jaissonracoes@gmail.com</p>
+      </div>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Clique no marcador -> scroll até a seção
+      document.querySelectorAll('.map-wrapper .pin').forEach(pin => {
+        pin.addEventListener('click', () => {
+          const sel = pin.getAttribute('data-target');
+          const el = document.querySelector(sel);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      // Destacar marcador conforme rolagem
+      const pinsById = {
+        '#fazenda-maruim':  document.querySelector('.pin[data-target="#fazenda-maruim"]'),
+        '#fazenda-gaucha':  document.querySelector('.pin[data-target="#fazenda-gaucha"]'),
+        '#fazenda-campos':  document.querySelector('.pin[data-target="#fazenda-campos"]'),
+        '#fazenda-pantanal':document.querySelector('.pin[data-target="#fazenda-pantanal"]'),
+        '#fazenda-cerrado': document.querySelector('.pin[data-target="#fazenda-cerrado"]'),
+        '#fazenda-capital': document.querySelector('.pin[data-target="#fazenda-capital"]'),
+      };
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            // limpa estado
+            document.querySelectorAll('.map-wrapper .pin').forEach(p => p.classList.remove('active'));
+            // ativa o pin correspondente
+            const id = `#${e.target.id}`;
+            if (pinsById[id]) pinsById[id].classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
+
+      document.querySelectorAll('.farm-card').forEach(sec => obs.observe(sec));
+    </script>
+  </footer>
+</body>
+</html>
