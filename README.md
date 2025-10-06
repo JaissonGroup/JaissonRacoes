@@ -460,11 +460,12 @@ $$
 
 ## Frota de Caminhões da Jaisson Rações
 
-| Tamanho     | Modelo (exemplo)                                         |  Frota  | Capacidade (t) | Custo (R$/km) | Custo por t.km (R$/t.km) |
-| ----------- | -------------------------------------------------------- | :-----: | :------------: | :-----------: | :----------------------: |
-| **Pequeno** | **VW Constellation 30.330 8x2** (truck graneleiro)       | **105** |     **20**     |  **R$ 8,00**  |        **R$ 0,40**       |
-| **Médio**   | **Mercedes-Benz Actros 2651 6x4** + semirreboque 3 eixos |  **70** |     **35**     |  **R$ 10,50** |        **R$ 0,30**       |
-| **Grande**  | **Scania R 450 6x4** + bitrem graneleiro (9 eixos)      |  **35** |     **60**     |  **R$ 12,00** |        **R$ 0,20**       |
+| Tamanho     | Modelo (exemplo)                                         |  Frota  | Capacidade (t) | Custo (R$/km) | **Custo fixo por viagem** |
+| ----------- | -------------------------------------------------------- | :-----: | :------------: | :-----------: | ------------------------: |
+| **Pequeno** | **VW Constellation 30.330 8x2** (truck graneleiro)       | **105** |     **20**     |  **R$ 8,00**  |             **R$ 128,00** |
+| **Médio**   | **Mercedes-Benz Actros 2651 6x4** + semirreboque 3 eixos |  **70** |     **35**     |  **R$ 10,50** |            **R$ 1064,00** |
+| **Grande**  | **Scania R 450 6x4** + bitrem graneleiro (9 eixos)      |  **35** |     **60**     |  **R$ 12,00**  |            **R$ 9024,00** |
+
 
 
 
