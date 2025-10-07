@@ -1,0 +1,144 @@
+/* =========================
+   Logística — Jaisson Rações
+   ========================= */
+.log-hero {
+  padding: 56px 0 20px;
+  background: radial-gradient(800px 400px at -10% 0%, rgba(254,198,51,.15), transparent 60%),
+              radial-gradient(800px 400px at 110% 0%, rgba(19,116,49,.10), transparent 60%);
+}
+.log-hero h1 { margin:10px 0 6px; font-size: clamp(26px, 4.6vw, 42px); }
+.log-hero p { color: var(--ink-2); margin:0 0 14px; }
+
+.fleet-grid {
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:22px;
+  margin-top:22px;
+}
+.fleet-card {
+  display:grid; grid-template-columns: 1fr 1fr; gap:20px;
+  background:#fff; border-radius:20px; box-shadow: var(--shadow);
+  border:1px solid #eef2f7; padding:16px;
+}
+.fleet-media {
+  aspect-ratio: 16/10;
+  border-radius:16px;
+  background: var(--ph) center/cover no-repeat;
+}
+.fleet-info h3 { margin:0 0 6px; font-size:22px }
+.fleet-info .meta { list-style:none; padding:0; margin:0 0 8px; color:var(--ink-2); }
+.fleet-info .meta li { margin:2px 0; }
+.fleet-card.size-small { border-left:5px solid #1e88e5; }
+.fleet-card.size-medium { border-left:5px solid #2e7d32; }
+.fleet-card.size-large { border-left:5px solid var(--yellow); }
+
+.fleet-table {
+  margin-top:36px;
+  background:#fff;
+  border-radius:18px;
+  padding:16px;
+  box-shadow: var(--shadow);
+}
+.fleet-table h3 { margin-top:0; }
+.fleet-table table {
+  width:100%;
+  border-collapse:collapse;
+  text-align:center;
+}
+.fleet-table th {
+  background:var(--green-50);
+  color:var(--ink);
+  font-weight:700;
+  padding:8px;
+}
+.fleet-table td {
+  border-top:1px solid #eef2f7;
+  padding:8px;
+}
+/* ===== Rotas & Distâncias ===== */
+.rotas { padding: 28px 0 56px; }
+.rotas-figure {
+  position: relative;
+  background:#fff;
+  border:1px solid #eef2f7;
+  border-radius:20px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+  margin: 12px 0 18px;
+}
+.rotas-figure img{
+  display:block; width:100%; height:auto; border-radius:12px;
+}
+.rotas-figure figcaption{
+  margin:8px 0 0; font-size:12px; color:var(--muted);
+}
+.rotas-zoom{
+  display:block; border-radius:12px; overflow:hidden;
+}
+.rotas-zoom:hover img{ filter:saturate(1.02) contrast(1.02); }
+
+.rotas-legend{
+  position:absolute; right:16px; bottom:16px;
+  display:flex; gap:8px; flex-wrap:wrap;
+  background: rgba(255,255,255,.92);
+  border:1px solid #e2e8f0;
+  padding:8px; border-radius:10px;
+  backdrop-filter: blur(4px);
+}
+.chip{
+  font-size:12px; font-weight:700;
+  padding:4px 8px; border-radius:999px;
+  border:1px solid rgba(0,0,0,.06);
+}
+/* cores para tipos de fazenda e fábrica */
+.chip.farm-small  { background:#d7ebff; color:#0b3a7a; } /* Azul → Pequena */
+.chip.farm-medium { background:#dff3e3; color:#0c5c2a; } /* Verde → Média */
+.chip.farm-large  { background:#fff1c9; color:#7a5a00; } /* Amarelo → Grande */
+.chip.fab         { background:#ffe0e0; color:#7a1010; } /* Vermelho → Fábrica */
+
+.rotas-table{
+  margin-top: 14px;
+  background:#fff; border:1px solid #eef2f7; border-radius:18px;
+  box-shadow: var(--shadow); padding: 14px;
+}
+.rotas-table h3{ margin:0 0 8px; }
+.rotas-table table{
+  width:100%; border-collapse: collapse; text-align:center;
+}
+.rotas-table th{
+  background: var(--green-50);
+  padding:8px; font-weight:800;
+}
+.rotas-table td{
+  padding:8px; border-top:1px solid #eef2f7;
+}
+.rotas-table .hint{
+  margin:8px 0 0; color:var(--muted); font-size:12px;
+}
+
+/* Responsivo */
+@media (max-width: 720px){
+  .rotas-legend{ position:static; margin-top:8px; }
+}
+/* ===== Barra de emojis da frota ===== */
+.fleet-emoji-row{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+  gap:4px;
+  max-height: 140px;           /* evita ficar gigante na tela */
+  overflow: auto;
+  padding:8px;
+  border:1px dashed #e5e7eb;
+  border-radius:12px;
+  background:#fafafa;
+  scrollbar-width: thin;
+}
+.fleet-emoji-row span{
+  display:inline-block;
+  font-size:16px;
+  line-height:1;
+  filter: saturate(1.1);
+}
+
+
