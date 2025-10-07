@@ -100,3 +100,18 @@
   .gal-item img{ height: 240px; }
   .gallery-grid{ grid-template-columns: 1fr; } /* cai para 1 coluna no mobile */
 }
+/* Logos quadradas SEM cortar */
+.lead-photo{
+  width: 128px;
+  aspect-ratio: 1 / 1;                 /* quadrada */
+  background: #fff center / contain no-repeat; /* <- contain não corta */
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;                  /* 0 se quiser reto */
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  flex: 0 0 auto;
+  padding: 6px;                         /* respiro para não encostar nas bordas */
+}
+
+@media (max-width: 640px){
+  .lead-photo{ width: 100px; padding: 4px; }
+}
