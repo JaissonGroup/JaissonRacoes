@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vendas — Jaisson Rações</title>
+  <meta name="description" content="Vitrine de rações Jaisson — vendemos para produtores rurais do mundo todo." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="vendas.css" />
+  <link rel="icon" href="jaissonracoes-logo.png" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" />
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html#areas">Áreas</a></li>
+          <li><a href="fazendas.html">Fazendas</a></li>
+          <li><a href="agricultura.html">Agricultura</a></li>
+          <li><a href="logistica.html">Logística</a></li>
+          <li><a href="producao.html">Produção</a></li>
+          <li><a class="active" href="vendas.html" aria-current="page">Vendas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero vendas -->
+  <section class="sales-hero">
+    <div class="container hero-wrap">
+      <div class="hero-copy">
+        <span class="pill">Portfólio Global</span>
+        <h1>Vendemos para produtores rurais do mundo todo.</h1>
+        <p>Da nutrição para bovinos de corte e leite até aves, equinos, ovinos/caprinos, pássaros e aquicultura. Qualidade, padrão e confiança Jaisson.</p>
+      </div>
+      <!-- troque a imagem de fundo em vendas.css (.sales-hero::before) ou use inline abaixo -->
+    </div>
+  </section>
+
+  <!-- Vitrine de produtos -->
+  <main class="sales-list">
+    <div class="container">
+      <header class="section-head">
+        <h2>Rações disponíveis</h2>
+        <p>Escolha uma linha para ver tamanhos, preços e descrição completa.</p>
+      </header>
+
+      <div class="products-grid" id="products">
+        <!-- Card BC-G -->
+        <article class="product-card" data-target="#modal-bcg">
+          <div class="thumb">
+            <!-- Substitua por sua foto -->
+            <img src="https://plus.unsplash.com/premium_photo-1677850457221-05191dc81864?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="BC-G — Bovino de corte" loading="lazy">
+          </div>
+          <div class="p-body">
+            <div class="row-1">
+              <span class="code">BC-G</span>
+              <h3 class="title">Bovino de corte</h3>
+            </div>
+            <p class="use">Confinamento e terminação</p>
+            <div class="sizes">
+              <span class="chip">30 kg • R$ 78,00</span>
+              <span class="chip alt">Big bag 1.000 kg • R$ 2.200</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card BL-L -->
+        <article class="product-card" data-target="#modal-bll">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?q=80&w=788&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="BL-L — Vaca leiteira" loading="lazy"></div>
+          <div class="p-body">
+            <div class="row-1"><span class="code">BL-L</span><h3 class="title">Vaca leiteira</h3></div>
+            <p class="use">Alta produção de leite</p>
+            <div class="sizes">
+              <span class="chip">30 kg • R$ 88,00</span>
+              <span class="chip alt">Big bag 1.000 kg • R$ 2.480</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card AV-P -->
+        <article class="product-card" data-target="#modal-avp">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1588597989061-b60ad0eefdbf?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AV-P — Galinha poedeira" loading="lazy"></div>
+          <div class="p-body">
+            <div class="row-1"><span class="code">AV-P</span><h3 class="title">Galinha poedeira</h3></div>
+            <p class="use">Aves de postura</p>
+            <div class="sizes">
+              <span class="chip">25 kg • R$ 75,00</span>
+              <span class="chip alt">Big bag 1.000 kg • R$ 2.150</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card EQ-M -->
+        <article class="product-card" data-target="#modal-eqm">
+          <div class="thumb"><img src="https://i.ibb.co/7tL54N6y/44c2ad87-6596-4bfc-b0e4-e15521baf042-1.png" alt="EQ-M — Equinos" loading="lazy"></div>
+          <div class="p-body">
+            <div class="row-1"><span class="code">EQ-M</span><h3 class="title">Equinos</h3></div>
+            <p class="use">Trabalho leve / lazer</p>
+            <div class="sizes">
+              <span class="chip">25 kg • R$ 105,00</span>
+              <span class="chip disabled" aria-disabled="true">Big bag —</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card OV-M -->
+        <article class="product-card" data-target="#modal-ovm">
+          <div class="thumb"><img src="https://plus.unsplash.com/premium_photo-1661811804102-0da6840d7327?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="OV-M — Ovinos/Caprinos" loading="lazy"></div>
+          <div class="p-body">
+            <div class="row-1"><span class="code">OV-M</span><h3 class="title">Ovinos/Caprinos</h3></div>
+            <p class="use">Pequenos ruminantes</p>
+            <div class="sizes">
+              <span class="chip">30 kg • R$ 82,00</span>
+              <span class="chip alt">Big bag 1.000 kg • R$ 2.300</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card PA-PET -->
+        <article class="product-card" data-target="#modal-papet">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1531360593661-93d8592f2576?q=80&w=718&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="PA-PET — Pássaros" loading="lazy"></div>
+          <div class="p-body">
+            <div class="row-1"><span class="code">PA-PET</span><h3 class="title">Pássaros</h3></div>
+            <p class="use">Aves ornamentais e pets</p>
+            <div class="sizes">
+              <span class="chip">15 kg • R$ 98,00</span>
+              <span class="chip disabled" aria-disabled="true">Big bag —</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card AQ-T -->
+        <article class="product-card" data-target="#modal-aqt">
+          <div class="thumb"><img src="https://www.epagri.sc.gov.br/balancosocial/2023/img/producao-de-tilapia.webp" alt="AQ-T — Tilápia" loading="lazy"></div>
+          <div class="p-body">
+            <div class="row-1"><span class="code">AQ-T</span><h3 class="title">Tilápia</h3></div>
+            <p class="use">Crescimento e engorda</p>
+            <div class="sizes">
+              <span class="chip">25 kg • R$ 80,00</span>
+              <span class="chip alt">Big bag 1.000 kg • R$ 2.250</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAIS (um por linha) -->
+  <!-- BC-G -->
+  <div class="modal" id="modal-bcg" role="dialog" aria-modal="true" aria-labelledby="modal-bcg-title" hidden>
+    <div class="modal__sheet">
+      <button class="modal__close" data-close>&times;</button>
+      <div class="modal__media" style="--ph: url('https://plus.unsplash.com/premium_photo-1677850457281-772c39419991?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="modal__body">
+        <h3 id="modal-bcg-title">BC-G — Bovino de corte</h3>
+        <p class="desc">Formulação energética de alto ganho de peso, indicada para confinamento e terminação de gado de corte.</p>
+        <table class="prices">
+          <thead><tr><th>Embalagem</th><th>Preço</th><th>Preço por kg</th></tr></thead>
+          <tbody>
+            <tr><td>30 kg</td><td>R$ 78,00</td><td>R$ 2,60/kg</td></tr>
+            <tr><td>Big bag 1.000 kg</td><td>R$ 2.200</td><td>R$ 2,20/kg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- BL-L -->
+  <div class="modal" id="modal-bll" role="dialog" aria-modal="true" aria-labelledby="modal-bll-title" hidden>
+    <div class="modal__sheet">
+      <button class="modal__close" data-close>&times;</button>
+      <div class="modal__media" style="--ph: url('https://plus.unsplash.com/premium_photo-1661925306592-c355d46e3ace?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="modal__body">
+        <h3 id="modal-bll-title">BL-L — Vaca leiteira</h3>
+        <p class="desc">Mistura balanceada com foco em proteína e minerais, para vacas em lactação com alta produção de leite.</p>
+        <table class="prices">
+          <thead><tr><th>Embalagem</th><th>Preço</th><th>Preço por kg</th></tr></thead>
+          <tbody>
+            <tr><td>30 kg</td><td>R$ 88,00</td><td>R$ 2,93/kg</td></tr>
+            <tr><td>Big bag 1.000 kg</td><td>R$ 2.480</td><td>R$ 2,48/kg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- AV-P -->
+  <div class="modal" id="modal-avp" role="dialog" aria-modal="true" aria-labelledby="modal-avp-title" hidden>
+    <div class="modal__sheet">
+      <button class="modal__close" data-close>&times;</button>
+      <div class="modal__media" style="--ph: url('https://images.unsplash.com/photo-1569466593977-94ee7ed02ec9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="modal__body">
+        <h3 id="modal-avp-title">AV-P — Galinha poedeira</h3>
+        <p class="desc">Ração completa para aves de postura, com níveis de cálcio otimizados para qualidade da casca dos ovos.</p>
+        <table class="prices">
+          <thead><tr><th>Embalagem</th><th>Preço</th><th>Preço por kg</th></tr></thead>
+          <tbody>
+            <tr><td>25 kg</td><td>R$ 75,00</td><td>R$ 3,00/kg</td></tr>
+            <tr><td>Big bag 1.000 kg</td><td>R$ 2.150</td><td>R$ 2,15/kg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- EQ-M -->
+  <div class="modal" id="modal-eqm" role="dialog" aria-modal="true" aria-labelledby="modal-eqm-title" hidden>
+    <div class="modal__sheet">
+      <button class="modal__close" data-close>&times;</button>
+      <div class="modal__media" style="--ph: url('https://plus.unsplash.com/premium_photo-1677850457487-9b40130ff3f8?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="modal__body">
+        <h3 id="modal-eqm-title">EQ-M — Equinos</h3>
+        <p class="desc">Ração equilibrada para cavalos de trabalho leve ou lazer, garantindo energia e boa digestibilidade.</p>
+        <table class="prices">
+          <thead><tr><th>Embalagem</th><th>Preço</th><th>Preço por kg</th></tr></thead>
+          <tbody>
+            <tr><td>25 kg</td><td>R$ 105,00</td><td>R$ 4,20/kg</td></tr>
+            <tr class="muted"><td>Big bag</td><td>Não produzido</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- OV-M -->
+  <div class="modal" id="modal-ovm" role="dialog" aria-modal="true" aria-labelledby="modal-ovm-title" hidden>
+    <div class="modal__sheet">
+      <button class="modal__close" data-close>&times;</button>
+      <div class="modal__media" style="--ph: url('https://www.comprerural.com/wp-content/uploads/2019/06/racao-paletizada-caprinos-e-ovinos.jpeg')"></div>
+      <div class="modal__body">
+        <h3 id="modal-ovm-title">OV-M — Ovinos/Caprinos</h3>
+        <p class="desc">Mistura adaptada para pequenos ruminantes, favorecendo ganho de peso e saúde do rebanho.</p>
+        <table class="prices">
+          <thead><tr><th>Embalagem</th><th>Preço</th><th>Preço por kg</th></tr></thead>
+          <tbody>
+            <tr><td>30 kg</td><td>R$ 82,00</td><td>R$ 2,73/kg</td></tr>
+            <tr><td>Big bag 1.000 kg</td><td>R$ 2.300</td><td>R$ 2,30/kg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- PA-PET -->
+  <div class="modal" id="modal-papet" role="dialog" aria-modal="true" aria-labelledby="modal-papet-title" hidden>
+    <div class="modal__sheet">
+      <button class="modal__close" data-close>&times;</button>
+      <div class="modal__media" style="--ph: url('https://images.unsplash.com/photo-1728774268113-ddbce0fc0943?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="modal__body">
+        <h3 id="modal-papet-title">PA-PET — Pássaros</h3>
+        <p class="desc">Ração premium para aves ornamentais e pets, com alto valor agregado e nutrientes específicos.</p>
+        <table class="prices">
+          <thead><tr><th>Embalagem</th><th>Preço</th><th>Preço por kg</th></tr></thead>
+          <tbody>
+            <tr><td>15 kg</td><td>R$ 98,00</td><td>R$ 6,53/kg</td></tr>
+            <tr class="muted"><td>Big bag</td><td>Não produzido</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- AQ-T -->
+  <div class="modal" id="modal-aqt" role="dialog" aria-modal="true" aria-labelledby="modal-aqt-title" hidden>
+    <div class="modal__sheet">
+      <button class="modal__close" data-close>&times;</button>
+      <div class="modal__media" style="--ph: url('https://amazonasatual.com.br/wp-content/uploads/2016/10/PISCICULTURA.jpg')"></div>
+      <div class="modal__body">
+        <h3 id="modal-aqt-title">AQ-T — Tilápia</h3>
+        <p class="desc">Formulação extrusada de alta digestibilidade, indicada para peixes em fase de crescimento e engorda.</p>
+        <table class="prices">
+          <thead><tr><th>Embalagem</th><th>Preço</th><th>Preço por kg</th></tr></thead>
+          <tbody>
+            <tr><td>25 kg</td><td>R$ 80,00</td><td>R$ 3,20/kg</td></tr>
+            <tr><td>Big bag 1.000 kg</td><td>R$ 2.250</td><td>R$ 2,25/kg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="f-col">
+        <img src="jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+        <p class="f-copy">© <span id="year"></span> Jaisson Rações. Todos os direitos reservados.</p>
+      </div>
+      <nav class="f-col f-nav" aria-label="Rodapé">
+        <a href="fazendas.html">Fazendas</a>
+        <a href="agricultura.html">Agricultura</a>
+        <a href="logistica.html">Logística</a>
+        <a href="producao.html">Produção</a>
+        <a href="vendas.html" aria-current="page">Vendas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="sustentabilidade.html">Sustentabilidade</a>
+      </nav>
+      <div class="f-col">
+        <p class="f-small">Pirabeiraba – SC • codykoinabox+jaissonracoes@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // abre/fecha modais
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const target = card.getAttribute('data-target');
+        const modal = document.querySelector(target);
+        if (modal){ modal.hidden = false; document.body.classList.add('modal-open'); modal.querySelector('.modal__close')?.focus(); }
+      });
+    });
+    document.querySelectorAll('[data-close]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modal = btn.closest('.modal'); if (!modal) return;
+        modal.hidden = true; document.body.classList.remove('modal-open');
+      });
+    });
+    // fecha ao clicar no overlay
+    document.querySelectorAll('.modal').forEach(m => {
+      m.addEventListener('click', (e) => {
+        if (e.target === m){ m.hidden = true; document.body.classList.remove('modal-open'); }
+      });
+    });
+    // ESC para fechar
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape'){
+        document.querySelectorAll('.modal').forEach(m => m.hidden = true);
+        document.body.classList.remove('modal-open');
+      }
+    });
+  </script>
+</body>
+</html>

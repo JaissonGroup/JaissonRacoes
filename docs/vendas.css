@@ -1,0 +1,162 @@
+/* =========================
+   Vendas — Jaisson Rações
+   Depende de styles.css (paleta e base)
+   ========================= */
+
+:root{
+  --green: #137431;
+  --yellow: #FEC633;
+  --ink: #0f172a;
+  --ink-2: #334155;
+  --muted: #6b7280;
+  --radius: 18px;
+  --shadow: 0 10px 36px rgba(0,0,0,.10);
+}
+
+/* ===== Hero ===== */
+.sales-hero{
+  position: relative; isolation: isolate;
+  padding: 88px 0 72px;
+  overflow: hidden;
+  background:
+    radial-gradient(800px 360px at 10% -10%, rgba(254,198,51,.20), transparent 60%),
+    radial-gradient(800px 360px at 110% -10%, rgba(19,116,49,.10), transparent 60%);
+}
+.sales-hero::before{
+  /* Troque a URL abaixo por sua foto hero de vendas, se quiser */
+  content:""; position:absolute; inset:0; z-index:-2;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.15) 45%, rgba(255,255,255,1) 85%),
+    url('https://plus.unsplash.com/premium_photo-1677850457318-06499bd9f58c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+  filter: saturate(1.05);
+}
+.hero-wrap{ display:flex; align-items:end; min-height: 280px }
+.hero-copy .pill{
+  display:inline-block; background:var(--yellow); color:#1a1a1a; font-weight:800;
+  padding:6px 12px; border-radius:999px; letter-spacing:.2px;
+}
+.sales-hero h1{ margin:10px 0 6px; color:#082312; font-size: clamp(26px, 4.6vw, 46px) }
+.sales-hero p{ margin:0; color:#0f2f1b; max-width: 60ch }
+
+/* ===== Lista / grade ===== */
+.sales-list{ padding: 40px 0 64px }
+.section-head h2{ margin:0 0 6px; font-size: clamp(22px, 4vw, 32px) }
+.section-head p{ margin:0 0 18px; color:var(--muted) }
+
+.products-grid{
+  display:grid; gap:16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 980px){ .products-grid{ grid-template-columns: repeat(2, 1fr) } }
+@media (max-width: 620px){ .products-grid{ grid-template-columns: 1fr } }
+
+/* ===== Card de produto ===== */
+.product-card{
+  border:1px solid #eef2f7; border-radius: var(--radius);
+  background:#fff; box-shadow: var(--shadow);
+  cursor:pointer; overflow:hidden; display:flex; flex-direction:column;
+  transition: transform .05s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.product-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 44px rgba(0,0,0,.12);
+  border-color:#e2e8f0;
+}
+.product-card:active{ transform: translateY(0) }
+
+.product-card .thumb{
+  width:100%; aspect-ratio: 16/10; background:#f8fafc;
+  overflow:hidden;
+}
+.product-card .thumb img{
+  width:100%; height:100%; object-fit: cover; display:block;
+  transition: transform .6s ease;
+}
+.product-card:hover .thumb img{ transform: scale(1.04) }
+
+.p-body{ padding:14px }
+.row-1{ display:flex; align-items:center; gap:10px; margin-bottom:4px }
+.code{
+  font-weight:800; font-size:12px; letter-spacing:.3px; color:#1b1500;
+  background:var(--yellow); border-radius: 999px; padding:4px 8px;
+}
+.title{ margin:0; font-size:18px; line-height:1.2 }
+.use{ margin:4px 0 10px; color:var(--muted); font-size:14px }
+
+.sizes{ display:flex; flex-wrap:wrap; gap:8px }
+.chip{
+  display:inline-flex; gap:6px; align-items:center;
+  background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0;
+  border-radius:999px; padding:6px 10px; font-weight:700; font-size:12px;
+}
+.chip.alt{ background:#fff; border-color:#fed766 }
+.chip.disabled{ opacity:.55; text-decoration: line-through }
+
+/* ===== Modal ===== */
+body.modal-open{ overflow:hidden }
+
+.modal{
+  position: fixed; inset:0; z-index: 9999;
+  display:grid; place-items:center; padding: 20px;
+  background: rgba(15,23,42,.45); /* backdrop */
+  backdrop-filter: blur(2px);
+}
+.modal[hidden]{ display:none }
+
+.modal__sheet{
+  width:min(980px, 96vw);
+  background:#fff; border-radius: 20px; overflow:hidden;
+  box-shadow: 0 20px 80px rgba(0,0,0,.35);
+  transform: translateY(6px); opacity:0; animation: modalIn .18s ease-out forwards;
+}
+@keyframes modalIn{
+  to{ transform:none; opacity:1 }
+}
+
+.modal__media{
+  width:100%; aspect-ratio: 16/7;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.35)),
+    var(--ph) center/cover no-repeat;
+}
+.modal__body{
+  padding: 18px 18px 22px;
+}
+.modal__body h3{ margin:0 0 6px; font-size:22px }
+.modal__body .desc{ margin:0 0 12px; color:var(--ink-2) }
+
+.modal__close{
+  position:absolute; right:14px; top:10px;
+  width:38px; height:38px; border:0; border-radius:12px; cursor:pointer;
+  background:#0f172a; color:#fff; font-size:22px; line-height: 1;
+  display:grid; place-items:center;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+.modal__close:hover{ filter: brightness(1.08) }
+.modal__close:focus{ outline: 3px solid #94d3a2; outline-offset: 2px }
+
+/* Tabela de preços dentro do modal */
+.prices{
+  width:100%; border-collapse: collapse; overflow:hidden;
+  border:1px solid #e2e8f0; border-radius: 14px;
+}
+.prices thead th{
+  background:#f8fafc; color:#0f172a; text-align:left;
+  padding:10px; font-size:13px; border-bottom:1px solid #e2e8f0;
+}
+.prices td{
+  padding:10px; border-bottom:1px solid #eef2f7; font-weight:600
+}
+.prices tr:last-child td{ border-bottom:0 }
+.prices .muted td{ color:var(--muted); font-weight:500 }
+
+/* ===== Acessibilidade mínima para foco via teclado ===== */
+.product-card:focus, .product-card:focus-visible{
+  outline: 3px solid #94d3a2; outline-offset: 3px;
+  border-color:#94d3a2;
+}
+
+/* ===== Pequenos ajustes do header ativo ===== */
+.main-nav a.active{
+  background: var(--green); color:#fff;
+}
