@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sustentabilidade — Jaisson Rações</title>
+  <meta name="description" content="Sustentabilidade e ESG na Jaisson Rações: práticas ambientais, sociais e de governança aplicadas ao agronegócio." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="jaissonracoes-logo.png" />
+  <link rel="stylesheet" href="sustentabilidade.css" />
+
+  <style>
+    .sust-hero {
+      position: relative;
+      isolation: isolate;
+      padding: 72px 0 48px;
+      background:
+        linear-gradient(rgba(19,116,49,.65), rgba(19,116,49,.25)),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+      color: #fff;
+    }
+    .sust-hero h1 { font-size: clamp(28px, 5vw, 52px); margin: 10px 0 8px; }
+    .sust-hero p { max-width: 70ch; opacity: .95; }
+
+    .initiatives { padding: 60px 0 64px; }
+    .initiative-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 32px;
+      border: 1px solid #eef2f7;
+    }
+    .initiative-img {
+      aspect-ratio: 16/10;
+      background: var(--ph) center/cover no-repeat;
+      min-height: 340px;
+    }
+    .initiative-info { padding: 20px 24px; display: flex; flex-direction: column; justify-content: center; }
+    .initiative-info h3 { margin: 0 0 8px; color: var(--green-900); }
+    .initiative-info p { margin: 0; color: var(--ink-2); }
+
+    @media (max-width: 820px) {
+      .initiative-card { grid-template-columns: 1fr; }
+      .initiative-img { min-height: 260px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" />
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html#areas">Áreas</a></li>
+          <li><a href="fazendas.html">Fazendas</a></li>
+          <li><a href="agricultura.html">Agricultura</a></li>
+          <li><a href="logistica.html">Logística</a></li>
+          <li><a href="producao.html">Produção</a></li>
+          <li><a href="vendas.html">Vendas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a class="active" href="sustentabilidade.html">Sustentabilidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO ESG -->
+  <section class="sust-hero">
+    <div class="container">
+      <span class="pill">Compromisso ESG</span>
+      <h1>Sustentabilidade e responsabilidade no agro.</h1>
+      <p>
+        A Jaisson Rações nasceu com a missão de revolucionar o mercado de rações com eficiência, rastreabilidade e
+        impacto positivo. Nosso modelo ESG une inovação, respeito ao meio ambiente e compromisso social.
+      </p>
+    </div>
+  </section>
+
+  <!-- INICIATIVAS -->
+  <section class="initiatives">
+    <div class="container">
+      <header class="section-head">
+        <h2>Nossas Iniciativas Sustentáveis</h2>
+        <p>Programas e práticas que colocam o meio ambiente no centro das operações.</p>
+      </header>
+
+      <!-- 1 -->
+      <article class="initiative-card">
+        <div class="initiative-img" style="--ph: url('https://i.ibb.co/WNz221xD/Gemini-Generated-Image-k73n40k73n40k73n.jpg');"></div>
+        <div class="initiative-info">
+          <h3>🚗 Frota Elétrica</h3>
+          <p>Investimos em caminhões e utilitários elétricos para reduzir emissões de carbono e ruído em rotas curtas.</p>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="initiative-card">
+        <div class="initiative-img" style="--ph: url('https://images.unsplash.com/photo-1675116731363-c17d957f3444?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+        <div class="initiative-info">
+          <h3>💨 Energia Eólica</h3>
+          <p>Parte da energia usada em nossas fazendas vem de turbinas eólicas instaladas em áreas estratégicas.</p>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="initiative-card">
+        <div class="initiative-img" style="--ph: url('https://www.sq4s.co.uk/wordpress/wp-content/uploads/2022/12/5.jpg');"></div>
+        <div class="initiative-info">
+          <h3>☀️ Energia Solar</h3>
+          <p>Todos os escritórios e galpões possuem painéis solares, garantindo autossuficiência energética limpa.</p>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="initiative-card">
+        <div class="initiative-img" style="--ph: url('https://images.unsplash.com/photo-1716903282677-3a1b5c936b41?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+        <div class="initiative-info">
+          <h3>🌿 Composteiras</h3>
+          <p>Reaproveitamos resíduos orgânicos da produção para gerar adubo natural e reduzir o descarte.</p>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="initiative-card">
+        <div class="initiative-img" style="--ph: url('https://images.squarespace-cdn.com/content/v1/659bbaef4f6d2e51141da2cc/bd8e86e4-a85d-4429-adbd-b0f0a8037243/Precision+farming.jpg');"></div>
+        <div class="initiative-info">
+          <h3>🛰️ Fazendas de Alta Precisão</h3>
+          <p>Utilizamos sensores, drones e dados agronômicos para otimizar insumos, aumentar a produtividade e reduzir impactos.</p>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="initiative-card">
+        <div class="initiative-img" style="--ph: url('https://i.ibb.co/27R01G6Z/Gemini-Generated-Image-1u9zne1u9zne1u9z.png');"></div>
+        <div class="initiative-info">
+          <h3>🌳 Reflorestamento</h3>
+          <p>Reflorestamos áreas próximas às nossas fazendas e criamos corredores ecológicos para a fauna local.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="f-col">
+        <img src="jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+        <p class="f-copy">© <span id="year"></span> Jaisson Rações. Todos os direitos reservados.</p>
+      </div>
+      <nav class="f-col f-nav" aria-label="Rodapé">
+        <a href="fazendas.html">Fazendas</a>
+        <a href="agricultura.html">Agricultura</a>
+        <a href="logistica.html">Logística</a>
+        <a href="producao.html">Produção</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="sustentabilidade.html" aria-current="page">Sustentabilidade</a>
+      </nav>
+      <div class="f-col">
+        <p class="f-small">Pirabeiraba – SC • codykoinabox+jaissonracoes@gmail.com</p>
+      </div>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
