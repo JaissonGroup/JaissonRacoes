@@ -20,12 +20,32 @@
     .grain-card:hover{transform:translateY(-3px)}
     .grain-media{aspect-ratio:16/10;background:var(--ph) center/cover no-repeat}
     .grain-info{padding:18px}
-    .grain-info h3{margin:0 0 6px;font-size:22px}
-    .grain-tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
-    .grain-tags span{font-size:12px;background:#f2f2f2;border-radius:20px;padding:3px 8px}
-    table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
-    th,td{border:1px solid #e5e7eb;padding:6px 8px;text-align:center}
-    th{background:#f9fafb;font-weight:700}
+    .grain-info h3{margin:0 0 10px;font-size:22px}
+
+    /* ===== LISTA VERTICAL: valor + label “Importância” + % em pílula ===== */
+    .spec-vertical{display:flex;flex-direction:column;gap:10px;margin:6px 0}
+    .spec-row{
+      display:grid;
+      grid-template-columns: 26px 1fr auto;
+      grid-template-rows: auto auto;
+      column-gap:10px; row-gap:6px;
+      align-items:center;
+      background:#f9fafb; border:1px solid #eef2f7; border-radius:12px; padding:10px;
+    }
+    .spec-ico{grid-row:1 / span 2; font-size:16px}
+    .spec-name{font-weight:700}
+    .spec-value{
+      justify-self:end;
+      font-weight:700; font-size:12px; padding:4px 8px; border-radius:999px;
+      background:#fff; border:1px solid #e5e7eb;
+    }
+    .spec-sub{grid-column:2; font-size:12px; color:#6b7280}
+    .pct-pill{
+      grid-column:3; justify-self:end;
+      font-size:12px; font-weight:800; color:#0f172a;
+      background:#ffffffcc; padding:4px 8px; border-radius:999px; border:1px solid #e5e7eb;
+    }
+
     .uses{margin-top:10px;font-size:13px;color:var(--ink-2)}
   </style>
 </head>
@@ -59,26 +79,74 @@
   <section class="container grains-grid">
     <!-- Milho -->
     <article class="grain-card">
-      <div class="grain-media" style="--ph:url('https://images.unsplash.com/photo-1554402100-8d1d9f3dff80?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-media" style="--ph:url('https://images.unsplash.com/photo-1554402100-8d1d9f3dff80?q=80&w=687&auto=format&fit=crop')"></div>
       <div class="grain-info">
         <h3>🌽 Milho</h3>
-        <div class="grain-tags"><span>Alta água</span><span>Básico</span><span>Argilosa</span><span>Quente</span><span>Alta radiação</span><span>Alta fertilidade</span></div>
-        <table><tr><th>Fator</th><th>Importância</th></tr>
-          <tr><td>Água</td><td>22%</td></tr><tr><td>pH</td><td>13%</td></tr><tr><td>Textura</td><td>13%</td></tr><tr><td>Temperatura</td><td>22%</td></tr><tr><td>Radiação</td><td>15%</td></tr><tr><td>Fertilidade</td><td>15%</td></tr>
-        </table>
+
+        <div class="spec-vertical">
+          <div class="spec-row">
+            <span class="spec-ico">💧</span><span class="spec-name">Água</span><span class="spec-value">Alta</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">22%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🧪</span><span class="spec-name">pH ideal</span><span class="spec-value">Básico</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">13%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌱</span><span class="spec-name">Textura</span><span class="spec-value">Argilosa</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">13%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌡️</span><span class="spec-name">Temperatura</span><span class="spec-value">Quente</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">22%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">☀️</span><span class="spec-name">Radiação</span><span class="spec-value">Alta</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">15%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">⚙️</span><span class="spec-name">Fertilidade</span><span class="spec-value">Alta</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">15%</span>
+          </div>
+        </div>
+
         <p class="uses"><strong>Usado em:</strong> BC-G, BL-L, AV-P, EQ-M, OV-M, PA-PET, AQ-T</p>
       </div>
     </article>
 
     <!-- Soja -->
     <article class="grain-card">
-      <div class="grain-media" style="--ph:url('https://plus.unsplash.com/premium_photo-1661815691473-5efc09a055e4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-media" style="--ph:url('https://plus.unsplash.com/premium_photo-1661815691473-5efc09a055e4?q=80&w=1170&auto=format&fit=crop')"></div>
       <div class="grain-info">
         <h3>🌱 Soja</h3>
-        <div class="grain-tags"><span>Muita água</span><span>Básico</span><span>Argilosa</span><span>Quente</span><span>Alta radiação</span><span>Alta fertilidade</span></div>
-        <table><tr><th>Fator</th><th>Importância</th></tr>
-          <tr><td>Água</td><td>20%</td></tr><tr><td>pH</td><td>17%</td></tr><tr><td>Textura</td><td>13%</td></tr><tr><td>Temperatura</td><td>20%</td></tr><tr><td>Radiação</td><td>16%</td></tr><tr><td>Fertilidade</td><td>14%</td></tr>
-        </table>
+
+        <div class="spec-vertical">
+          <div class="spec-row">
+            <span class="spec-ico">💧</span><span class="spec-name">Água</span><span class="spec-value">Muita</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">20%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🧪</span><span class="spec-name">pH ideal</span><span class="spec-value">Básico</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">17%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌱</span><span class="spec-name">Textura</span><span class="spec-value">Argilosa</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">13%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌡️</span><span class="spec-name">Temperatura</span><span class="spec-value">Quente</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">20%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">☀️</span><span class="spec-name">Radiação</span><span class="spec-value">Alta</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">16%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">⚙️</span><span class="spec-name">Fertilidade</span><span class="spec-value">Alta</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">14%</span>
+          </div>
+        </div>
+
         <p class="uses"><strong>Usado em:</strong> BC-G, BL-L, AV-P, EQ-M, OV-M, PA-PET, AQ-T</p>
       </div>
     </article>
@@ -88,49 +156,145 @@
       <div class="grain-media" style="--ph:url('https://www.ffa.org/wp-content/uploads/2025/01/Sorghum-Landscape-scaled.jpg')"></div>
       <div class="grain-info">
         <h3>🌾 Sorgo</h3>
-        <div class="grain-tags"><span>Pouca água</span><span>Básico</span><span>Arenosa</span><span>Quente</span><span>Alta radiação</span><span>Média fertilidade</span></div>
-        <table><tr><th>Fator</th><th>Importância</th></tr>
-          <tr><td>Água</td><td>13%</td></tr><tr><td>pH</td><td>13%</td></tr><tr><td>Textura</td><td>20%</td></tr><tr><td>Temperatura</td><td>22%</td></tr><tr><td>Radiação</td><td>16%</td></tr><tr><td>Fertilidade</td><td>16%</td></tr>
-        </table>
+
+        <div class="spec-vertical">
+          <div class="spec-row">
+            <span class="spec-ico">💧</span><span class="spec-name">Água</span><span class="spec-value">Pouca</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">13%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🧪</span><span class="spec-name">pH ideal</span><span class="spec-value">Básico</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">13%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌱</span><span class="spec-name">Textura</span><span class="spec-value">Arenosa</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">20%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌡️</span><span class="spec-name">Temperatura</span><span class="spec-value">Quente</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">22%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">☀️</span><span class="spec-name">Radiação</span><span class="spec-value">Alta</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">16%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">⚙️</span><span class="spec-name">Fertilidade</span><span class="spec-value">Média</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">16%</span>
+          </div>
+        </div>
+
         <p class="uses"><strong>Usado em:</strong> BC-G, BL-L, AV-P, OV-M, AQ-T</p>
       </div>
     </article>
 
     <!-- Trigo -->
     <article class="grain-card">
-      <div class="grain-media" style="--ph:url('https://images.unsplash.com/photo-1437252611977-07f74518abd7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-media" style="--ph:url('https://images.unsplash.com/photo-1437252611977-07f74518abd7?q=80&w=1074&auto=format&fit=crop')"></div>
       <div class="grain-info">
         <h3>🌾 Trigo</h3>
-        <div class="grain-tags"><span>Média água</span><span>Ácido</span><span>Argilosa</span><span>Frio</span><span>Média radiação</span><span>Média fertilidade</span></div>
-        <table><tr><th>Fator</th><th>Importância</th></tr>
-          <tr><td>Água</td><td>18%</td></tr><tr><td>pH</td><td>18%</td></tr><tr><td>Textura</td><td>14%</td></tr><tr><td>Temperatura</td><td>22%</td></tr><tr><td>Radiação</td><td>16%</td></tr><tr><td>Fertilidade</td><td>12%</td></tr>
-        </table>
+
+        <div class="spec-vertical">
+          <div class="spec-row">
+            <span class="spec-ico">💧</span><span class="spec-name">Água</span><span class="spec-value">Média</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">18%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🧪</span><span class="spec-name">pH ideal</span><span class="spec-value">Ácido</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">18%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌱</span><span class="spec-name">Textura</span><span class="spec-value">Argilosa</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">14%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌡️</span><span class="spec-name">Temperatura</span><span class="spec-value">Frio</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">22%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">☀️</span><span class="spec-name">Radiação</span><span class="spec-value">Média</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">16%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">⚙️</span><span class="spec-name">Fertilidade</span><span class="spec-value">Média</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">12%</span>
+          </div>
+        </div>
+
         <p class="uses"><strong>Usado em:</strong> BC-G, BL-L, AV-P, EQ-M, OV-M, PA-PET, AQ-T</p>
       </div>
     </article>
 
     <!-- Aveia -->
     <article class="grain-card">
-      <div class="grain-media" style="--ph:url('https://plus.unsplash.com/premium_photo-1670909649532-d1d68ee475cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-media" style="--ph:url('https://plus.unsplash.com/premium_photo-1670909649532-d1d68ee475cd?q=80&w=1170&auto=format&fit=crop')"></div>
       <div class="grain-info">
         <h3>🌾 Aveia</h3>
-        <div class="grain-tags"><span>Média água</span><span>Ácido</span><span>Argilosa</span><span>Frio</span><span>Média radiação</span><span>Média fertilidade</span></div>
-        <table><tr><th>Fator</th><th>Importância</th></tr>
-          <tr><td>Água</td><td>18%</td></tr><tr><td>pH</td><td>18%</td></tr><tr><td>Textura</td><td>14%</td></tr><tr><td>Temperatura</td><td>22%</td></tr><tr><td>Radiação</td><td>16%</td></tr><tr><td>Fertilidade</td><td>12%</td></tr>
-        </table>
+
+        <div class="spec-vertical">
+          <div class="spec-row">
+            <span class="spec-ico">💧</span><span class="spec-name">Água</span><span class="spec-value">Média</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">18%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🧪</span><span class="spec-name">pH ideal</span><span class="spec-value">Ácido</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">18%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌱</span><span class="spec-name">Textura</span><span class="spec-value">Argilosa</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">14%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌡️</span><span class="spec-name">Temperatura</span><span class="spec-value">Frio</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">22%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">☀️</span><span class="spec-name">Radiação</span><span class="spec-value">Média</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">16%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">⚙️</span><span class="spec-name">Fertilidade</span><span class="spec-value">Média</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">12%</span>
+          </div>
+        </div>
+
         <p class="uses"><strong>Usado em:</strong> BL-L, AV-P, EQ-M, PA-PET, AQ-T</p>
       </div>
     </article>
 
     <!-- Girassol -->
     <article class="grain-card">
-      <div class="grain-media" style="--ph:url('https://images.unsplash.com/photo-1599369553272-29f89a9d4696?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+      <div class="grain-media" style="--ph:url('https://images.unsplash.com/photo-1599369553272-29f89a9d4696?q=80&w=2127&auto=format&fit=crop')"></div>
       <div class="grain-info">
         <h3>🌻 Girassol</h3>
-        <div class="grain-tags"><span>Pouca água</span><span>Básico</span><span>Arenosa</span><span>Quente</span><span>Alta radiação</span><span>Média fertilidade</span></div>
-        <table><tr><th>Fator</th><th>Importância</th></tr>
-          <tr><td>Água</td><td>13%</td></tr><tr><td>pH</td><td>13%</td></tr><tr><td>Textura</td><td>17%</td></tr><tr><td>Temperatura</td><td>20%</td></tr><tr><td>Radiação</td><td>17%</td></tr><tr><td>Fertilidade</td><td>20%</td></tr>
-        </table>
+
+        <div class="spec-vertical">
+          <div class="spec-row">
+            <span class="spec-ico">💧</span><span class="spec-name">Água</span><span class="spec-value">Pouca</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">13%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🧪</span><span class="spec-name">pH ideal</span><span class="spec-value">Básico</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">13%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌱</span><span class="spec-name">Textura</span><span class="spec-value">Arenosa</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">17%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">🌡️</span><span class="spec-name">Temperatura</span><span class="spec-value">Quente</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">20%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">☀️</span><span class="spec-name">Radiação</span><span class="spec-value">Alta</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">17%</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-ico">⚙️</span><span class="spec-name">Fertilidade</span><span class="spec-value">Média</span>
+            <span class="spec-sub">Importância:</span><span class="pct-pill">20%</span>
+          </div>
+        </div>
+
         <p class="uses"><strong>Usado em:</strong> BL-L, EQ-M, OV-M, PA-PET, AQ-T</p>
       </div>
     </article>
