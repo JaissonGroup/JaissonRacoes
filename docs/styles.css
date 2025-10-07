@@ -233,3 +233,15 @@ body{
   .areas-grid{ grid-template-columns: 1fr }
   .footer-grid{ grid-template-columns: 1fr; text-align:center }
 }
+
+.github-link {
+  color: var(--ink-2);
+  display: inline-flex;
+  align-items: center;
+  margin-left: 16px;
+  transition: color .2s ease, transform .15s ease;
+}
+.github-link:hover {
+  color: var(--green);
+  transform: translateY(-1px);
+}
