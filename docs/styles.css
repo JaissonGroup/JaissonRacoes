@@ -245,3 +245,120 @@ body{
   color: var(--green);
   transform: translateY(-1px);
 }
+
+/* =========================
+   Markdown (tipografia base)
+   ========================= */
+.md{
+  max-width: 980px;
+  margin-inline: auto;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+.md :where(h1,h2,h3,h4){
+  color: var(--green-900);
+  line-height: 1.2;
+  margin: 1.2em 0 .4em;
+  font-weight: 800;
+}
+.md h1{ font-size: clamp(28px, 4.8vw, 40px); border-bottom: 1px solid #eef2f7; padding-bottom: .3em; }
+.md h2{ font-size: clamp(22px, 3.8vw, 30px); border-bottom: 1px solid #eef2f7; padding-bottom: .25em; }
+.md h3{ font-size: clamp(18px, 3vw, 22px); }
+.md p{ margin: .85em 0; }
+.md strong{ font-weight: 800; }
+.md em{ font-style: italic; }
+.md a{
+  color: var(--green-700);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(19,116,49,.25);
+}
+.md a:hover{ color: var(--green-900); border-color: var(--yellow); }
+
+/* Listas */
+.md :where(ul,ol){ padding-left: 1.3em; margin: .6em 0; }
+.md li{ margin: .3em 0; }
+.md li::marker{ color: var(--green-700); }
+
+/* Citações */
+.md blockquote{
+  margin: 1em 0; padding: .6em .9em;
+  border-left: 4px solid var(--yellow);
+  background: #fff8df;
+  border-radius: 10px;
+  color: var(--ink-2);
+}
+
+/* Código inline e blocos */
+.md code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: .1em .4em; border-radius: 6px; font-size: .95em;
+}
+.md pre{
+  background: #0f172a; color: #f8fafc;
+  padding: 14px; border-radius: 12px; overflow-x: auto;
+  box-shadow: var(--shadow);
+}
+.md pre code{
+  background: transparent; border: 0; padding: 0; color: inherit; font-size: .95em;
+}
+
+/* Tabelas responsivas */
+.md .table-wrap{ overflow: auto; border-radius: 12px; border: 1px solid #e2e8f0; }
+.md table{ width: 100%; border-collapse: collapse; background: #fff; }
+.md thead th{
+  background: var(--green-50);
+  color: var(--ink); font-weight: 800; text-align: left; padding: 10px;
+}
+.md td, .md th{ border-top: 1px solid #eef2f7; padding: 10px; }
+
+/* Imagens e figuras */
+.md img{ max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow); }
+.md figure{ margin: 1em 0; }
+.md figcaption{ color: var(--muted); font-size: .9em; text-align: center; margin-top: .4em; }
+
+/* Regras horizontais */
+.md hr{
+  border: 0; height: 1px; background: #e5e7eb;
+  margin: 1.6em 0;
+}
+
+/* Callouts (opcional em Markdown com HTML) */
+.md .note, .md .warn, .md .tip{
+  padding: 12px 14px; border-radius: 12px; border: 1px solid #e2e8f0; margin: 12px 0;
+}
+.md .note{ background:#eef7f1; border-color:#cfe8d8 }
+.md .warn{ background:#fff5e5; border-color:#ffe0a6 }
+.md .tip { background:#e9f5ff; border-color:#cfe3ff }
+
+/* Código de linha numerada (opt-in) */
+.md pre.numbered{
+  counter-reset: line;
+  padding-left: 46px;
+  position: relative;
+}
+.md pre.numbered code{ display:block; }
+.md pre.numbered code span{
+  display:block;
+}
+.md pre.numbered code span::before{
+  counter-increment: line;
+  content: counter(line);
+  position: absolute; left: 10px;
+  color:#94a3b8; text-align: right; width: 26px;
+}
+
+/* Pequenas */
+@media (max-width: 560px){
+  .md{ font-size: 15.5px; }
+}
+/* Evita quebra de linha no item "Pesquisa Operacional" (e em todos os links do menu) */
+.main-nav a{ white-space: nowrap; }
+
+/* (opcional) dá uma leve apertada no espaçamento quando ainda estiver em desktop */
+@media (min-width: 781px){
+  .main-nav ul{ gap: 14px; }       /* era 18px */
+  .main-nav a{ padding: 10px 10px; }/* era 10px 12px */
+}

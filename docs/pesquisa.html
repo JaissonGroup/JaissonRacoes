@@ -1,0 +1,2013 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pesquisa Operacional — Jaisson Rações</title>
+  <meta name="description" content="Modelagem de Pesquisa Operacional da Jaisson Rações — dados, tabelas e análises do projeto." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="jaissonracoes-logo.png" />
+  <style>
+    main.markdown-area {
+      padding: 48px 0;
+    }
+    main.markdown-area .container {
+      max-width: 980px;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    main.markdown-area h1, main.markdown-area h2, main.markdown-area h3 {
+      color: var(--green-900);
+    }
+    main.markdown-area pre {
+      background: #f9fafb;
+      padding: 12px;
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+    main.markdown-area table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 18px 0;
+    }
+    main.markdown-area th, main.markdown-area td {
+      border: 1px solid #e5e7eb;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    main.markdown-area th {
+      background: #f8fafc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menu" />
+      <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html#areas">Áreas</a></li>
+          <li><a href="fazendas.html">Fazendas</a></li>
+          <li><a href="agricultura.html">Agricultura</a></li>
+          <li><a href="logistica.html">Logística</a></li>
+          <li><a href="producao.html">Produção</a></li>
+          <li><a href="vendas.html">Vendas</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+          <li><a class="active" href="pesquisa.html">Pesquisa Operacional</a></li>
+        </ul>
+      </nav>
+            <!-- Ícone GitHub -->
+<a href="https://github.com/JaissonGroup/JaissonRacoes" class="github-link" target="_blank" aria-label="Repositório Jaisson Rações no GitHub">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.6.4-1.1.7-1.3-2.6-.3-5.4-1.3-5.4-6a4.6 4.6 0 0 1 1.2-3.1c-.1-.3-.5-1.5.1-3 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.5.2 2.7.1 3a4.6 4.6 0 0 1 1.2 3.1c0 4.7-2.8 5.7-5.5 6 .4.3.8.9.8 1.9v2.9c0 .3.2.7.8.6A10.97 10.97 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+  </svg>
+</a>
+    </div>
+  </header>
+
+  <!-- Área principal onde você pode colar Markdown -->
+  <main class="markdown-area">
+    <div class="container">
+      <!-- Cole seu markdown convertido em HTML aqui -->
+      <h1>Pesquisa Operacional — Jaisson Rações</h1>
+      <h3 id="trabalho-de-pesquisa-operacional-com-o-professor-jaisson">Trabalho de Pesquisa Operacional com o Professor Jaisson</h3>
+<p>Neste trabalho, vamos resolver um problema de Programação Linear utilizando o método simplex. O problema será modelado a partir de uma empresa fictícia de Rações.</p>
+<h1 id="problema-">Problema:</h1>
+<p>A Jaisson Rações é uma empresa verticalmente integrada que produz rações para animais. A empresa é dona de fazendas, caminhões e uma fábrica, cuidando desde à produção da matéria prima, até o transporte e processamento dos grãos em rações.
+Para os cálculos, desconsidere tempo.
+Utilizando os dados disponibilizados pela empresa, e respeitando suas regras de négocio, ajude a Jaisson Rações a <strong>maximizar seu lucro</strong>, além do valor máximo de lucro possível por safra, a empresa precisa que você forneca os seguintes dados:</p>
+<ul>
+<li>Quais grãos serão plantados em cada fazenda e sua quantidade de hectares.</li>
+<li>Quais caminhões farão o transporte de quais fazendas.</li>
+<li>A quantidade de sacos de ração de cada linha e tamanho.</li>
+<li>O custo da empresa com agricultura por fazenda.</li>
+<li>O custo total da empresa com agricultura (todas as fazendas).</li>
+<li>O custo da empresa com logística por fazenda.</li>
+<li>O custo total da empresa com logística (todas as rotas)</li>
+<li>O custo total da empresa com ingredientes comprados. (todas as rações)</li>
+<li>O custo total de produção de cada tipo de ração. (cada linha e cada tamanho)</li>
+<li>O custo total da produção de todas as rações.</li>
+<li>O custo total de operação da empresa.</li>
+<li>O faturamento total da empresa.</li>
+<li>O lucro da empresa.</li>
+</ul>
+<h1 id="regras-de-neg-cio">Regras de Negócio</h1>
+<ul>
+<li>Todos os tipos de ração precisam ser produzidas, ou seja, todas as linhas em todos os tamanhos.</li>
+<li>Nenhum tipo de ração pode representar menos de 2.5% da produção total, arredondado para o número inteiro de cima, isso é contabilizado por quantidade de items, ou seja, independe do tamanho. Isso garante a presença da empresa em todos os mercados. (Se a Jaisson produzir 100 items, cada linha precisa ter no mínimo 3 items produzidos)</li>
+<li>Todas as fazendas devem ter sua área total de hectares cultivadas.</li>
+<li>Uma fazenda pode produzir vários tipos diferentes de grão, porém um tipo de grão não pode ocupar menos de 10 hectares em uma fazenda.</li>
+<li>Nenhum grão pode ser deixado nas fazendas, a produção total deve ser transportada para a fábrica.</li>
+<li>Caminhões só podem ter um destino por viagem, ele não pode passar por duas fazendas, por exemplo.</li>
+<li>Caminhões podem realizar múltiplas viagens por safra. Em cada viagem: um único destino e um único grão.</li>
+<li>Se sobrar grão na fábrica, poderão ser vendidos a preço tabelado de venda.</li>
+<li>Se faltar grão na fábrica, poderão ser comprados a preço tabelado de compra.</li>
+</ul>
+<hr>
+<h2 id="ra-es-produzidas">Rações Produzidas</h2>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Categoria</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BC-G</strong></td>
+<td><strong>Bovino de corte</strong></td>
+<td>Formulação energética de alto ganho de peso, indicada para confinamento e terminação de gado de corte.</td>
+</tr>
+<tr>
+<td><strong>BL-L</strong></td>
+<td><strong>Vaca leiteira</strong></td>
+<td>Mistura balanceada com foco em proteína e minerais, para vacas em lactação com alta produção de leite.</td>
+</tr>
+<tr>
+<td><strong>AV-P</strong></td>
+<td><strong>Galinha poedeira</strong></td>
+<td>Ração completa para aves de postura, com níveis de cálcio otimizados para qualidade da casca dos ovos.</td>
+</tr>
+<tr>
+<td><strong>EQ-M</strong></td>
+<td><strong>Equinos</strong></td>
+<td>Ração equilibrada para cavalos de trabalho leve ou lazer, garantindo energia e boa digestibilidade.</td>
+</tr>
+<tr>
+<td><strong>OV-M</strong></td>
+<td><strong>Ovinos/Caprinos</strong></td>
+<td>Mistura adaptada para pequenos ruminantes, favorecendo ganho de peso e saúde do rebanho.</td>
+</tr>
+<tr>
+<td><strong>PA-PET</strong></td>
+<td><strong>Pássaros</strong></td>
+<td>Ração premium para aves ornamentais e pets, com alto valor agregado e nutrientes específicos.</td>
+</tr>
+<tr>
+<td><strong>AQ-T</strong></td>
+<td><strong>Tilápia</strong></td>
+<td>Formulação extrusada de alta digestibilidade, indicada para peixes em fase de crescimento e engorda.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tamanhos-de-embalagem-por-linha-de-ra-o">Tamanhos de Embalagem por Linha de Ração</h2>
+<table>
+<thead>
+<tr>
+<th>Linha / Código</th>
+<th>Tamanho Padrão</th>
+<th>Alternativa (alto volume)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BC-G (Corte)</strong></td>
+<td>30 kg</td>
+<td>Big bag 1.000 kg</td>
+</tr>
+<tr>
+<td><strong>BL-L (Leite)</strong></td>
+<td>30 kg</td>
+<td>Big bag 1.000 kg</td>
+</tr>
+<tr>
+<td><strong>AV-P (Poedeira)</strong></td>
+<td>25 kg</td>
+<td>Big bag 1.000 kg</td>
+</tr>
+<tr>
+<td><strong>EQ-M (Equinos)</strong></td>
+<td>25 kg</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>OV-M (Ov/Capr)</strong></td>
+<td>30 kg</td>
+<td>Big bag 1.000 kg</td>
+</tr>
+<tr>
+<td><strong>PA-PET (Pássaros)</strong></td>
+<td>15 kg</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>AQ-T (Tilápia)</strong></td>
+<td>25 kg</td>
+<td>Big bag 1.000 kg</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pre-os-por-linha-de-ra-o">Preços por Linha de Ração</h2>
+<h3 id="bc-g-bovino-de-corte-">BC-G (Bovino de Corte)</h3>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Embalagem 30 kg</th>
+<th>Big bag 1.000 kg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BC-G (Corte)</td>
+<td>R$ 78,00</td>
+<td>R$ 2.200</td>
+</tr>
+<tr>
+<td>Preço por kg</td>
+<td>R$ 2,60/kg</td>
+<td>R$ 2,20/kg</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="bl-l-vaca-leiteira-">BL-L (Vaca Leiteira)</h3>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Embalagem 30 kg</th>
+<th>Big bag 1.000 kg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BL-L (Leite)</td>
+<td>R$ 88,00</td>
+<td>R$ 2.480</td>
+</tr>
+<tr>
+<td>Preço por kg</td>
+<td>R$ 2,93/kg</td>
+<td>R$ 2,48/kg</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="av-p-galinha-poedeira-">AV-P (Galinha Poedeira)</h3>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Embalagem 25 kg</th>
+<th>Big bag 1.000 kg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AV-P (Poedeira)</td>
+<td>R$ 75,00</td>
+<td>R$ 2.150</td>
+</tr>
+<tr>
+<td>Preço por kg</td>
+<td>R$ 3,00/kg</td>
+<td>R$ 2,15/kg</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="eq-m-equinos-">EQ-M (Equinos)</h3>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Embalagem 25 kg</th>
+<th>Big bag 1.000 kg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EQ-M (Equinos)</td>
+<td>R$ 105,00</td>
+<td>Não produzido</td>
+</tr>
+<tr>
+<td>Preço por kg</td>
+<td>R$ 4,20/kg</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="ov-m-ovinos-caprinos-">OV-M (Ovinos/Caprinos)</h3>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Embalagem 30 kg</th>
+<th>Big bag 1.000 kg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OV-M (Ov/Capr)</td>
+<td>R$ 82,00</td>
+<td>R$ 2.300</td>
+</tr>
+<tr>
+<td>Preço por kg</td>
+<td>R$ 2,73/kg</td>
+<td>R$ 2,30/kg</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="pa-pet-p-ssaros-">PA-PET (Pássaros)</h3>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Embalagem 15 kg</th>
+<th>Big bag 1.000 kg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PA-PET (Pássaros)</td>
+<td>R$ 98,00</td>
+<td>Não produzido</td>
+</tr>
+<tr>
+<td>Preço por kg</td>
+<td>R$ 6,53/kg</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="aq-t-til-pia-">AQ-T (Tilápia)</h3>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Embalagem 25 kg</th>
+<th>Big bag 1.000 kg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AQ-T (Tilápia)</td>
+<td>R$ 80,00</td>
+<td>R$ 2.250</td>
+</tr>
+<tr>
+<td>Preço por kg</td>
+<td>R$ 3,20/kg</td>
+<td>R$ 2,25/kg</td>
+</tr>
+</tbody>
+</table>
+<h2 id="composi-o-das-ra-es-">Composição das Rações (%)</h2>
+<table>
+<thead>
+<tr>
+<th>Ingrediente</th>
+<th style="text-align:center">BC-G Corte</th>
+<th style="text-align:center">BL-L Leite</th>
+<th style="text-align:center">AV-P Poedeira</th>
+<th style="text-align:center">EQ-M Equinos</th>
+<th style="text-align:center">OV-M Ov/Capr</th>
+<th style="text-align:center">PA-PET Pássaros</th>
+<th style="text-align:center">AQ-T Tilápia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td style="text-align:center">55%</td>
+<td style="text-align:center">34.5%</td>
+<td style="text-align:center">55%</td>
+<td style="text-align:center">25%</td>
+<td style="text-align:center">40%</td>
+<td style="text-align:center">45%</td>
+<td style="text-align:center">25%</td>
+</tr>
+<tr>
+<td><strong>Farelo de soja</strong></td>
+<td style="text-align:center">18%</td>
+<td style="text-align:center">28%</td>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">8%</td>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">4%</td>
+<td style="text-align:center">35%</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">9.5%</td>
+<td style="text-align:center">5%</td>
+<td style="text-align:center">0%</td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">0%</td>
+<td style="text-align:center">10%</td>
+</tr>
+<tr>
+<td><strong>Farelo de trigo</strong></td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">5%</td>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">8%</td>
+<td style="text-align:center">10%</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td style="text-align:center">0%</td>
+<td style="text-align:center">5%</td>
+<td style="text-align:center">2%</td>
+<td style="text-align:center">40%</td>
+<td style="text-align:center">0%</td>
+<td style="text-align:center">25%</td>
+<td style="text-align:center">2.5%</td>
+</tr>
+<tr>
+<td><strong>Farelo de girassol</strong></td>
+<td style="text-align:center">3%</td>
+<td style="text-align:center">5%</td>
+<td style="text-align:center">0%</td>
+<td style="text-align:center">3%</td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">10%</td>
+</tr>
+<tr>
+<td><strong>Calcário calcítico</strong></td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">1.5%</td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">2%</td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">0.5%</td>
+</tr>
+<tr>
+<td><strong>Óleo de soja</strong></td>
+<td style="text-align:center">2%</td>
+<td style="text-align:center">0.5%</td>
+<td style="text-align:center">2%</td>
+<td style="text-align:center">2%</td>
+<td style="text-align:center">2%</td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">5%</td>
+</tr>
+<tr>
+<td><strong>Pré-mix vit/min</strong></td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">1%</td>
+<td style="text-align:center">2%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="quantidade-de-ingredientes-embalagem-tamanho-padr-o">Quantidade de Ingredientes - Embalagem Tamanho Padrão</h2>
+<table>
+<thead>
+<tr>
+<th>Ingrediente</th>
+<th style="text-align:center">BC-G (30kg)</th>
+<th style="text-align:center">BL-L (30kg)</th>
+<th style="text-align:center">AV-P (25kg)</th>
+<th style="text-align:center">EQ-M (25kg)</th>
+<th style="text-align:center">OV-M (30kg)</th>
+<th style="text-align:center">PA-PET (15kg)</th>
+<th style="text-align:center">AQ-T (25kg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td style="text-align:center">16.5 kg</td>
+<td style="text-align:center">10.4 kg</td>
+<td style="text-align:center">13.8 kg</td>
+<td style="text-align:center">6.3 kg</td>
+<td style="text-align:center">12.0 kg</td>
+<td style="text-align:center">6.8 kg</td>
+<td style="text-align:center">6.3 kg</td>
+</tr>
+<tr>
+<td><strong>Farelo de soja</strong></td>
+<td style="text-align:center">5.4 kg</td>
+<td style="text-align:center">8.4 kg</td>
+<td style="text-align:center">5.0 kg</td>
+<td style="text-align:center">2.0 kg</td>
+<td style="text-align:center">6.0 kg</td>
+<td style="text-align:center">0.6 kg</td>
+<td style="text-align:center">8.8 kg</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td style="text-align:center">3.0 kg</td>
+<td style="text-align:center">2.9 kg</td>
+<td style="text-align:center">1.3 kg</td>
+<td style="text-align:center">0.0 kg</td>
+<td style="text-align:center">3.0 kg</td>
+<td style="text-align:center">0.0 kg</td>
+<td style="text-align:center">2.5 kg</td>
+</tr>
+<tr>
+<td><strong>Farelo de trigo</strong></td>
+<td style="text-align:center">3.0 kg</td>
+<td style="text-align:center">4.5 kg</td>
+<td style="text-align:center">1.3 kg</td>
+<td style="text-align:center">5.0 kg</td>
+<td style="text-align:center">4.5 kg</td>
+<td style="text-align:center">1.2 kg</td>
+<td style="text-align:center">2.5 kg</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td style="text-align:center">0.0 kg</td>
+<td style="text-align:center">1.5 kg</td>
+<td style="text-align:center">0.5 kg</td>
+<td style="text-align:center">10.0 kg</td>
+<td style="text-align:center">0.0 kg</td>
+<td style="text-align:center">3.8 kg</td>
+<td style="text-align:center">0.6 kg</td>
+</tr>
+<tr>
+<td><strong>Farelo de girassol</strong></td>
+<td style="text-align:center">0.9 kg</td>
+<td style="text-align:center">1.5 kg</td>
+<td style="text-align:center">0.0 kg</td>
+<td style="text-align:center">0.8 kg</td>
+<td style="text-align:center">3.0 kg</td>
+<td style="text-align:center">2.3 kg</td>
+<td style="text-align:center">2.5 kg</td>
+</tr>
+<tr>
+<td><strong>Calcário calcítico</strong></td>
+<td style="text-align:center">0.3 kg</td>
+<td style="text-align:center">0.5 kg</td>
+<td style="text-align:center">2.5 kg</td>
+<td style="text-align:center">0.3 kg</td>
+<td style="text-align:center">0.6 kg</td>
+<td style="text-align:center">0.2 kg</td>
+<td style="text-align:center">0.1 kg</td>
+</tr>
+<tr>
+<td><strong>Óleo de soja</strong></td>
+<td style="text-align:center">0.6 kg</td>
+<td style="text-align:center">0.2 kg</td>
+<td style="text-align:center">0.5 kg</td>
+<td style="text-align:center">0.5 kg</td>
+<td style="text-align:center">0.6 kg</td>
+<td style="text-align:center">0.2 kg</td>
+<td style="text-align:center">1.3 kg</td>
+</tr>
+<tr>
+<td><strong>Pré-mix vit/min</strong></td>
+<td style="text-align:center">0.3 kg</td>
+<td style="text-align:center">0.3 kg</td>
+<td style="text-align:center">0.3 kg</td>
+<td style="text-align:center">0.3 kg</td>
+<td style="text-align:center">0.3 kg</td>
+<td style="text-align:center">0.2 kg</td>
+<td style="text-align:center">0.5 kg</td>
+</tr>
+</tbody>
+</table>
+<h2 id="quantidade-de-ingredientes-big-bag-1000-kg">Quantidade de Ingredientes - Big Bag 1000 kg</h2>
+<table>
+<thead>
+<tr>
+<th>Ingrediente</th>
+<th style="text-align:center">BC-G</th>
+<th style="text-align:center">BL-L</th>
+<th style="text-align:center">AV-P</th>
+<th style="text-align:center">EQ-M</th>
+<th style="text-align:center">OV-M</th>
+<th style="text-align:center">PA-PET</th>
+<th style="text-align:center">AQ-T</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td style="text-align:center">550 kg</td>
+<td style="text-align:center">345 kg</td>
+<td style="text-align:center">550 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">400 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">250 kg</td>
+</tr>
+<tr>
+<td><strong>Farelo de soja</strong></td>
+<td style="text-align:center">180 kg</td>
+<td style="text-align:center">280 kg</td>
+<td style="text-align:center">200 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">200 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">350 kg</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td style="text-align:center">100 kg</td>
+<td style="text-align:center">95 kg</td>
+<td style="text-align:center">50 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">100 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">100 kg</td>
+</tr>
+<tr>
+<td><strong>Farelo de trigo</strong></td>
+<td style="text-align:center">100 kg</td>
+<td style="text-align:center">150 kg</td>
+<td style="text-align:center">50 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">150 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">100 kg</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td style="text-align:center">0 kg</td>
+<td style="text-align:center">50 kg</td>
+<td style="text-align:center">20 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">0 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">25 kg</td>
+</tr>
+<tr>
+<td><strong>Farelo de girassol</strong></td>
+<td style="text-align:center">30 kg</td>
+<td style="text-align:center">50 kg</td>
+<td style="text-align:center">0 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">100 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">100 kg</td>
+</tr>
+<tr>
+<td><strong>Calcário calcítico</strong></td>
+<td style="text-align:center">10 kg</td>
+<td style="text-align:center">15 kg</td>
+<td style="text-align:center">100 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">20 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">5 kg</td>
+</tr>
+<tr>
+<td><strong>Óleo de soja</strong></td>
+<td style="text-align:center">20 kg</td>
+<td style="text-align:center">5 kg</td>
+<td style="text-align:center">20 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">20 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">50 kg</td>
+</tr>
+<tr>
+<td><strong>Pré-mix vit/min</strong></td>
+<td style="text-align:center">10 kg</td>
+<td style="text-align:center">10 kg</td>
+<td style="text-align:center">10 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">10 kg</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">20 kg</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gr-os-produzidos-ingredientes">Grãos Produzidos / Ingredientes</h2>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Ingrediente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td>Milho</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>Farelo de Soja</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>Sorgo</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>Farelo de trigo</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>Aveia</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>Farelo de girassol</td>
+</tr>
+<tr>
+<td><strong>Comprado</strong></td>
+<td>Calcário calcítico</td>
+</tr>
+<tr>
+<td><strong>Comprado</strong></td>
+<td>Óleo de soja</td>
+</tr>
+<tr>
+<td><strong>Comprado</strong></td>
+<td>Pré-mix mineral vitamínico</td>
+</tr>
+</tbody>
+</table>
+<h2 id="valores-dos-ingredientes-compradoo">Valores dos Ingredientes Compradoo</h2>
+<table>
+<thead>
+<tr>
+<th>Ingrediente</th>
+<th>Preço (R$/kg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Calcário calcítico</strong></td>
+<td>R$ 0,40</td>
+</tr>
+<tr>
+<td><strong>Óleo de soja</strong></td>
+<td>R$ 6,00</td>
+</tr>
+<tr>
+<td><strong>Pré-mix vit/min</strong></td>
+<td>R$ 15,00</td>
+</tr>
+</tbody>
+</table>
+<h2 id="demanda-m-xima-por-linha-de-ra-o">Demanda máxima por linha de ração</h2>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th style="text-align:right">Máx. itens padrão</th>
+<th style="text-align:right">Máx. big bags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BC-G (Corte)</strong></td>
+<td style="text-align:right">150.000</td>
+<td style="text-align:right">3.000</td>
+</tr>
+<tr>
+<td><strong>BL-L (Leite)</strong></td>
+<td style="text-align:right">110.000</td>
+<td style="text-align:right">2.200</td>
+</tr>
+<tr>
+<td><strong>AV-P (Poedeira)</strong></td>
+<td style="text-align:right">105.000</td>
+<td style="text-align:right">1.125</td>
+</tr>
+<tr>
+<td><strong>EQ-M (Equinos)</strong></td>
+<td style="text-align:right">60.000</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td><strong>OV-M (Ov/Capr)</strong></td>
+<td style="text-align:right">60.000</td>
+<td style="text-align:right">1.200</td>
+</tr>
+<tr>
+<td><strong>PA-PET (Pássaros)</strong></td>
+<td style="text-align:right">50.000</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td><strong>AQ-T (Tilápia)</strong></td>
+<td style="text-align:right">60.000</td>
+<td style="text-align:right">1.500</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fazendas-da-jaisson-ra-es-">Fazendas da Jaisson Rações.</h2>
+<table>
+<thead>
+<tr>
+<th>Fazenda</th>
+<th>Localização</th>
+<th style="text-align:center">Área (ha)</th>
+<th style="text-align:center">Porte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fazenda Maruim</strong></td>
+<td>Corupá – SC</td>
+<td style="text-align:center">300</td>
+<td style="text-align:center">Pequena</td>
+</tr>
+<tr>
+<td><strong>Fazenda Gaúcha</strong></td>
+<td>Passo Fundo – RS</td>
+<td style="text-align:center">400</td>
+<td style="text-align:center">Pequena</td>
+</tr>
+<tr>
+<td><strong>Fazenda Campos Gerais</strong></td>
+<td>Ponta Grossa – PR</td>
+<td style="text-align:center">500</td>
+<td style="text-align:center">Pequena</td>
+</tr>
+<tr>
+<td><strong>Fazenda Pantanal</strong></td>
+<td>Dourados – MS</td>
+<td style="text-align:center">1200</td>
+<td style="text-align:center">Média</td>
+</tr>
+<tr>
+<td><strong>Fazenda Cerrado</strong></td>
+<td>Sorriso – MT</td>
+<td style="text-align:center">2500</td>
+<td style="text-align:center">Grande</td>
+</tr>
+<tr>
+<td><strong>Fazenda Capital</strong></td>
+<td>Rio Verde – GO</td>
+<td style="text-align:center">2200</td>
+<td style="text-align:center">Grande</td>
+</tr>
+<tr>
+<td><strong><em>ÁREA TOTAL</em></strong></td>
+<td>------------------</td>
+<td style="text-align:center"><strong>7100</strong></td>
+<td style="text-align:center">-------</td>
+</tr>
+</tbody>
+</table>
+<h2 id="condi-es-agroambientais-por-fazenda">Condições agroambientais por fazenda</h2>
+<table>
+<thead>
+<tr>
+<th>Fazenda</th>
+<th style="text-align:center">Radiação solar (kWh/m²/dia)</th>
+<th style="text-align:center">Dispon. de água</th>
+<th style="text-align:center">pH (acidez)</th>
+<th style="text-align:center">Textura do solo</th>
+<th style="text-align:center">Temp. média (°C)</th>
+<th style="text-align:center">Fertilidade natural</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fazenda Maruim</strong></td>
+<td style="text-align:center">Baixa</td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Ácido</td>
+<td style="text-align:center">Argilosa</td>
+<td style="text-align:center">Frio</td>
+<td style="text-align:center">Média</td>
+</tr>
+<tr>
+<td><strong>Fazenda Gaúcha</strong></td>
+<td style="text-align:center">Media</td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Ácido</td>
+<td style="text-align:center">Argilosa</td>
+<td style="text-align:center">Frio</td>
+<td style="text-align:center">Alta</td>
+</tr>
+<tr>
+<td><strong>Fazenda Campos Gerais</strong></td>
+<td style="text-align:center">Media</td>
+<td style="text-align:center">Média</td>
+<td style="text-align:center">Ácido</td>
+<td style="text-align:center">Argilosa</td>
+<td style="text-align:center">Frio</td>
+<td style="text-align:center">Média</td>
+</tr>
+<tr>
+<td><strong>Fazenda Pantanal</strong></td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Básico</td>
+<td style="text-align:center">Arenosa</td>
+<td style="text-align:center">Quente</td>
+<td style="text-align:center">Baixa</td>
+</tr>
+<tr>
+<td><strong>Fazenda Cerrado</strong></td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Média</td>
+<td style="text-align:center">Básico</td>
+<td style="text-align:center">Arenosa</td>
+<td style="text-align:center">Quente</td>
+<td style="text-align:center">Baixa</td>
+</tr>
+<tr>
+<td><strong>Fazenda Capital</strong></td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Média</td>
+<td style="text-align:center">Básico</td>
+<td style="text-align:center">Arenosa</td>
+<td style="text-align:center">Quente</td>
+<td style="text-align:center">Baixa</td>
+</tr>
+</tbody>
+</table>
+<h2 id="perfil-agron-mico-desejado-por-gr-o">Perfil agronômico desejado por grão</h2>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th style="text-align:center">Água</th>
+<th style="text-align:center">pH ideal</th>
+<th style="text-align:center">Textura preferida</th>
+<th style="text-align:center">Temp. ideal (°C)</th>
+<th style="text-align:center">Radiação (kWh/m²/dia)</th>
+<th style="text-align:center">Fertilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Básico</td>
+<td style="text-align:center">Argilosa</td>
+<td style="text-align:center">Quente</td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Alta</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td style="text-align:center">Muita</td>
+<td style="text-align:center">Básico</td>
+<td style="text-align:center">Argilosa</td>
+<td style="text-align:center">Quente</td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Alta</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td style="text-align:center">Pouca</td>
+<td style="text-align:center">Básico</td>
+<td style="text-align:center">Arenosa</td>
+<td style="text-align:center">Quente</td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Média</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td style="text-align:center">Média</td>
+<td style="text-align:center">Ácido</td>
+<td style="text-align:center">Argilosa</td>
+<td style="text-align:center">Frio</td>
+<td style="text-align:center">Média</td>
+<td style="text-align:center">Média</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td style="text-align:center">Média</td>
+<td style="text-align:center">Ácido</td>
+<td style="text-align:center">Argilosa</td>
+<td style="text-align:center">Frio</td>
+<td style="text-align:center">Média</td>
+<td style="text-align:center">Média</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td style="text-align:center">Pouca</td>
+<td style="text-align:center">Básico</td>
+<td style="text-align:center">Arenosa</td>
+<td style="text-align:center">Quente</td>
+<td style="text-align:center">Alta</td>
+<td style="text-align:center">Média</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pesos-de-import-ncia-somam-100-por-gr-o-">Pesos de importância (somam 100% por grão)</h2>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th style="text-align:center">Água</th>
+<th style="text-align:center">pH</th>
+<th style="text-align:center">Textura</th>
+<th style="text-align:center">Temperatura</th>
+<th style="text-align:center">Radiação</th>
+<th style="text-align:center">Fertilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td style="text-align:center">22%</td>
+<td style="text-align:center">13%</td>
+<td style="text-align:center">13%</td>
+<td style="text-align:center">22%</td>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">15%</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">17%</td>
+<td style="text-align:center">13%</td>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">16%</td>
+<td style="text-align:center">14%</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td style="text-align:center">13%</td>
+<td style="text-align:center">13%</td>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">22%</td>
+<td style="text-align:center">16%</td>
+<td style="text-align:center">16%</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td style="text-align:center">18%</td>
+<td style="text-align:center">18%</td>
+<td style="text-align:center">14%</td>
+<td style="text-align:center">22%</td>
+<td style="text-align:center">16%</td>
+<td style="text-align:center">12%</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td style="text-align:center">18%</td>
+<td style="text-align:center">18%</td>
+<td style="text-align:center">14%</td>
+<td style="text-align:center">22%</td>
+<td style="text-align:center">16%</td>
+<td style="text-align:center">12%</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td style="text-align:center">13%</td>
+<td style="text-align:center">13%</td>
+<td style="text-align:center">17%</td>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">17%</td>
+<td style="text-align:center">20%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="produ-o-m-dia-padr-o-toneladas-por-ha-dados-da-ntegra-">Produção Média Padrão (toneladas por ha) (dados da íntegra)</h2>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção Média Padrão (t/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td>6.0 t/ha</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>3.8 t/ha</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>3.2 t/ha</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>3.0 t/ha</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2.8 t/ha</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>1.8 t/ha</td>
+</tr>
+</tbody>
+</table>
+
+<script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+
+<h2 id="produ-o-por-fazenda-a-partir-dos-pesos-de-import-ncia-">Produção Por Fazenda (a partir dos pesos de importância)</h2>
+
+
+    <p>
+      A produção de um grão \(g\) em uma fazenda \(f\) é dada por:
+    </p>
+
+    <div class="formula-block">
+      $$ 
+      P_{ajustada}(g,f) = P_{base}(g) \cdot \left( 1 + \frac{1}{100} \sum_{i=1}^{n} m_i(g,f) \cdot w_i(g) \right)
+      $$
+    </div>
+
+    <p><strong>Onde:</strong></p>
+    <ul>
+      <li>\(P_{base}(g)\) = produção padrão do grão \(g\) (t/ha).</li>
+      <li>\(w_i(g)\) = peso (em %) do fator \(i\) para o grão \(g\).</li>
+      <li>\(m_i(g,f)\) = comparação entre a condição da fazenda \(f\) e o perfil ideal do grão \(g\):</li>
+    </ul>
+
+    <div class="formula-block">
+      $$
+      m_i(g,f) =
+      \begin{cases}
+      +1 & \text{se a condição da fazenda = perfil ideal do grão} \\
+      -1 & \text{se a condição da fazenda \ne \text{ perfil ideal do grão}}
+      \end{cases}
+      $$
+    </div>
+
+    <ul>
+      <li>\(n\) = número total de fatores considerados (aqui: 6 → Água, pH, Textura, Temperatura, Radiação, Fertilidade).</li>
+    </ul>
+<h3 id="fazenda-maruim">Fazenda Maruim</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção base (t/ha)</th>
+<th>Ajuste total (%)</th>
+<th>Produção ajustada (t/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2.8</td>
+<td>+32.0%</td>
+<td>3.7</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>1.8</td>
+<td>-60.0%</td>
+<td>0.72</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>6</td>
+<td>-30.0%</td>
+<td>4.2</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>3.8</td>
+<td>-34.0%</td>
+<td>2.51</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>3.2</td>
+<td>-68.0%</td>
+<td>1.02</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>3</td>
+<td>+32.0%</td>
+<td>3.96</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-ga-cha">Fazenda Gaúcha</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção base (t/ha)</th>
+<th>Ajuste total (%)</th>
+<th>Produção ajustada (t/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2.8</td>
+<td>+40.0%</td>
+<td>3.92</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>1.8</td>
+<td>-100.0%</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>6</td>
+<td>0.0%</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>3.8</td>
+<td>-6.0%</td>
+<td>3.57</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>3.2</td>
+<td>-100.0%</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>3</td>
+<td>+40.0%</td>
+<td>4.2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-campos-gerais">Fazenda Campos Gerais</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção base (t/ha)</th>
+<th>Ajuste total (%)</th>
+<th>Produção ajustada (t/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2.8</td>
+<td>+100.0%</td>
+<td>5.6</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>1.8</td>
+<td>-60.0%</td>
+<td>0.72</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>6</td>
+<td>-74.0%</td>
+<td>1.56</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>3.8</td>
+<td>-74.0%</td>
+<td>0.99</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>3.2</td>
+<td>-68.0%</td>
+<td>1.02</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>3</td>
+<td>+100.0%</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-pantanal">Fazenda Pantanal</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção base (t/ha)</th>
+<th>Ajuste total (%)</th>
+<th>Produção ajustada (t/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2.8</td>
+<td>-100.0%</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>1.8</td>
+<td>+34.0%</td>
+<td>2.41</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>6</td>
+<td>+44.0%</td>
+<td>8.64</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>3.8</td>
+<td>+46.0%</td>
+<td>5.55</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>3.2</td>
+<td>+42.0%</td>
+<td>4.54</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>3</td>
+<td>-100.0%</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-cerrado">Fazenda Cerrado</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção base (t/ha)</th>
+<th>Ajuste total (%)</th>
+<th>Produção ajustada (t/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2.8</td>
+<td>-64.0%</td>
+<td>1.01</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>1.8</td>
+<td>+34.0%</td>
+<td>2.41</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>6</td>
+<td>0.0%</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>3.8</td>
+<td>+6.0%</td>
+<td>4.03</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>3.2</td>
+<td>+42.0%</td>
+<td>4.54</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>3</td>
+<td>-64.0%</td>
+<td>1.08</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-capital">Fazenda Capital</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção base (t/ha)</th>
+<th>Ajuste total (%)</th>
+<th>Produção ajustada (t/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2.8</td>
+<td>-64.0%</td>
+<td>1.01</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>1.8</td>
+<td>+34.0%</td>
+<td>2.41</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>6</td>
+<td>0.0%</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>3.8</td>
+<td>+6.0%</td>
+<td>4.03</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>3.2</td>
+<td>+42.0%</td>
+<td>4.54</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>3</td>
+<td>-64.0%</td>
+<td>1.08</td>
+</tr>
+</tbody>
+</table>
+<h2 id="produ-o-total-m-xima-poss-vel-de-gr-o-por-fazenda">Produção Total Máxima Possível de Grão por Fazenda</h2>
+<h3 id="fazenda-maruim">Fazenda Maruim</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção Máxima Possível (ton)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>1108.8 t</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>216   t</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>1260   t</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>752.4 t</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>307.2 t</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>1188   t</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-ga-cha">Fazenda Gaúcha</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção Máxima Possível (ton)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>1568   t</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>0   t</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>2400   t</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>1428.8 t</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>0   t</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>1680   t</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-campos-gerais">Fazenda Campos Gerais</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção Máxima Possível (ton)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2800 t</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>360 t</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>780 t</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>494 t</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>512 t</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>3000 t</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-pantanal">Fazenda Pantanal</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção Máxima Possível (ton)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>0   t</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>2894.4 t</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>10368   t</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>6657.6 t</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>5452.8 t</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>0   t</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-cerrado">Fazenda Cerrado</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção Máxima Possível (ton)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2520 t</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>6030 t</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>15000 t</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>10070 t</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>11360 t</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>2700 t</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fazenda-capital">Fazenda Capital</h3>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th>Produção Máxima Possível (ton)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aveia</strong></td>
+<td>2217.6 t</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td>5306.4 t</td>
+</tr>
+<tr>
+<td><strong>Milho</strong></td>
+<td>13200   t</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td>8861.6 t</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td>9996.8 t</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td>2376   t</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pre-o-de-cultivo-por-gr-o">Preço de Cultivo por Grão</h2>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th style="text-align:right">Semente (R$/ha)</th>
+<th style="text-align:right">Manutenção (R$/ha)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td style="text-align:right">R$ 670,00</td>
+<td style="text-align:right">R$ 1785,00</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td style="text-align:right">R$ 483,00</td>
+<td style="text-align:right">R$ 2433,00</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td style="text-align:right">R$ 294,00</td>
+<td style="text-align:right">R$ 1692,00</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td style="text-align:right">R$ 312,00</td>
+<td style="text-align:right">R$ 2364,00</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td style="text-align:right">R$ 410,00</td>
+<td style="text-align:right">R$ 3024,00</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td style="text-align:right">R$ 272,00</td>
+<td style="text-align:right">R$ 2327,00</td>
+</tr>
+</tbody>
+</table>
+<h2 id="f-brica-de-ra-es-jaisson-ra-es">Fábrica de Rações Jaisson Rações</h2>
+<ul>
+<li>A fábrica que produz e distribui as rações da Jaisson Rações é localizada em Pirabeiraba, SC.</li>
+</ul>
+<h2 id="dist-ncia-de-cada-fazenda-at-a-f-brica">Distância de cada fazenda até a Fábrica</h2>
+<table>
+<thead>
+<tr>
+<th>Fazenda</th>
+<th>Localização</th>
+<th>Distancia até Fábrica (km)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fazenda Maruim</strong></td>
+<td>Corupá – SC</td>
+<td>70 km</td>
+</tr>
+<tr>
+<td><strong>Fazenda Gaúcha</strong></td>
+<td>Passo Fundo – RS</td>
+<td>566 km</td>
+</tr>
+<tr>
+<td><strong>Fazenda Campos Gerais</strong></td>
+<td>Ponta Grossa – PR</td>
+<td>228 km</td>
+</tr>
+<tr>
+<td><strong>Fazenda Pantanal</strong></td>
+<td>Dourados – MS</td>
+<td>954 km</td>
+</tr>
+<tr>
+<td><strong>Fazenda Cerrado</strong></td>
+<td>Sorriso – MT</td>
+<td>2143 km</td>
+</tr>
+<tr>
+<td><strong>Fazenda Capital</strong></td>
+<td>Rio Verde – GO</td>
+<td>1287 km</td>
+</tr>
+<tr>
+<td><strong><em>FÁBRICA</em></strong></td>
+<td>Pirabeiraba – SC</td>
+<td>0 km</td>
+</tr>
+</tbody>
+</table>
+<h2 id="frota-de-caminh-es-da-jaisson-ra-es">Frota de Caminhões da Jaisson Rações</h2>
+<table>
+<thead>
+<tr>
+<th>Tamanho</th>
+<th>Modelo (exemplo)</th>
+<th style="text-align:center">Frota</th>
+<th style="text-align:center">Capacidade (t)</th>
+<th style="text-align:center">Custo (R$/km)</th>
+<th style="text-align:right"><strong>Custo fixo por viagem</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pequeno</strong></td>
+<td><strong>VW Constellation 30.330 8x2</strong> (truck graneleiro)</td>
+<td style="text-align:center"><strong>105</strong></td>
+<td style="text-align:center"><strong>20</strong></td>
+<td style="text-align:center"><strong>R$ 8,00</strong></td>
+<td style="text-align:right"><strong>R$ 128,00</strong></td>
+</tr>
+<tr>
+<td><strong>Médio</strong></td>
+<td><strong>Mercedes-Benz Actros 2651 6x4</strong> + semirreboque 3 eixos</td>
+<td style="text-align:center"><strong>70</strong></td>
+<td style="text-align:center"><strong>35</strong></td>
+<td style="text-align:center"><strong>R$ 10,50</strong></td>
+<td style="text-align:right"><strong>R$ 1064,00</strong></td>
+</tr>
+<tr>
+<td><strong>Grande</strong></td>
+<td><strong>Scania R 450 6x4</strong> + bitrem graneleiro (9 eixos)</td>
+<td style="text-align:center"><strong>35</strong></td>
+<td style="text-align:center"><strong>60</strong></td>
+<td style="text-align:center"><strong>R$ 12,00</strong></td>
+<td style="text-align:right"><strong>R$ 9024,00</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="valor-de-venda-de-gr-os-excedentes-da-f-brica-retirado-na-fabrica-sem-frete-">Valor de VENDA de grãos excedentes da fábrica (retirado na fabrica, sem frete)</h2>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th style="text-align:center">Preço (R$/t)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td style="text-align:center">R$ 450,00</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td style="text-align:center">R$ 840,00</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td style="text-align:center">R$ 680,00</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td style="text-align:center">R$ 1260,00</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td style="text-align:center">R$ 1020,00</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td style="text-align:center">R$ 1640,00</td>
+</tr>
+</tbody>
+</table>
+<h2 id="valor-de-compra-de-gr-os-faltantes-da-f-brica-entregue-na-f-brica-sem-frete-">Valor de COMPRA de grãos faltantes da fábrica (entregue na fábrica, sem frete)</h2>
+<table>
+<thead>
+<tr>
+<th>Grão</th>
+<th style="text-align:center">Preço (R$/t)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Milho</strong></td>
+<td style="text-align:center">R$ 1380,00</td>
+</tr>
+<tr>
+<td><strong>Soja</strong></td>
+<td style="text-align:center">R$ 1380,00</td>
+</tr>
+<tr>
+<td><strong>Sorgo</strong></td>
+<td style="text-align:center">R$ 1120,00</td>
+</tr>
+<tr>
+<td><strong>Trigo</strong></td>
+<td style="text-align:center">R$ 2060,00</td>
+</tr>
+<tr>
+<td><strong>Aveia</strong></td>
+<td style="text-align:center">R$ 1670,00</td>
+</tr>
+<tr>
+<td><strong>Girassol</strong></td>
+<td style="text-align:center">R$ 2680,00</td>
+</tr>
+</tbody>
+</table>
+<h2 id="custo-da-produ-o-na-f-brica-tamanho-padr-o-">Custo da Produção na Fábrica (Tamanho Padrão)</h2>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th style="text-align:right">Peso (kg)</th>
+<th style="text-align:right">Processo (R$/kg)</th>
+<th style="text-align:right">Embalagem (R$/un)</th>
+<th style="text-align:right"><strong>Custo por item (R$)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BC-G (Corte)</strong></td>
+<td style="text-align:right">30 kg</td>
+<td style="text-align:right">R$ 0,10</td>
+<td style="text-align:right">R$ 5,00</td>
+<td style="text-align:right"><strong>R$ 8,00</strong></td>
+</tr>
+<tr>
+<td><strong>BL-L (Leite)</strong></td>
+<td style="text-align:right">30 kg</td>
+<td style="text-align:right">R$ 0,11</td>
+<td style="text-align:right">R$ 5,00</td>
+<td style="text-align:right"><strong>R$ 8,30</strong></td>
+</tr>
+<tr>
+<td><strong>AV-P (Poedeira)</strong></td>
+<td style="text-align:right">25 kg</td>
+<td style="text-align:right">R$ 0,12</td>
+<td style="text-align:right">R$ 4,50</td>
+<td style="text-align:right"><strong>R$ 7,50</strong></td>
+</tr>
+<tr>
+<td><strong>EQ-M (Equinos)</strong></td>
+<td style="text-align:right">25 kg</td>
+<td style="text-align:right">R$ 0,12</td>
+<td style="text-align:right">R$ 4,50</td>
+<td style="text-align:right"><strong>R$ 7,50</strong></td>
+</tr>
+<tr>
+<td><strong>OV-M (Ov/Capr)</strong></td>
+<td style="text-align:right">30 kg</td>
+<td style="text-align:right">R$ 0,11</td>
+<td style="text-align:right">R$ 5,00</td>
+<td style="text-align:right"><strong>R$ 8,30</strong></td>
+</tr>
+<tr>
+<td><strong>PA-PET (Pássaros)</strong></td>
+<td style="text-align:right">15 kg</td>
+<td style="text-align:right">R$ 0,16</td>
+<td style="text-align:right">R$ 4,00</td>
+<td style="text-align:right"><strong>R$ 6,40</strong></td>
+</tr>
+<tr>
+<td><strong>AQ-T (Tilápia)</strong></td>
+<td style="text-align:right">25 kg</td>
+<td style="text-align:right">R$ 0,24</td>
+<td style="text-align:right">R$ 4,50</td>
+<td style="text-align:right"><strong>R$ 10,50</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="custo-da-produ-o-na-f-brica-big-bag-">Custo da Produção na Fábrica (Big Bag)</h2>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th style="text-align:right">Peso (kg)</th>
+<th style="text-align:right">Processo (R$/kg)</th>
+<th style="text-align:right">Embalagem (R$/bb)</th>
+<th style="text-align:right"><strong>Custo por big bag (R$)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BC-G (Corte)</strong></td>
+<td style="text-align:right">1000 kg</td>
+<td style="text-align:right">R$ 0,10</td>
+<td style="text-align:right">R$ 95,00</td>
+<td style="text-align:right"><strong>R$ 195,00</strong></td>
+</tr>
+<tr>
+<td><strong>BL-L (Leite)</strong></td>
+<td style="text-align:right">1000 kg</td>
+<td style="text-align:right">R$ 0,11</td>
+<td style="text-align:right">R$ 95,00</td>
+<td style="text-align:right"><strong>R$ 205,00</strong></td>
+</tr>
+<tr>
+<td><strong>AV-P (Poedeira)</strong></td>
+<td style="text-align:right">1000 kg</td>
+<td style="text-align:right">R$ 0,12</td>
+<td style="text-align:right">R$ 95,00</td>
+<td style="text-align:right"><strong>R$ 215,00</strong></td>
+</tr>
+<tr>
+<td><strong>EQ-M (Equinos)</strong></td>
+<td style="text-align:right">1000 kg</td>
+<td style="text-align:right">—</td>
+<td style="text-align:right">—</td>
+<td style="text-align:right"><strong>—</strong></td>
+</tr>
+<tr>
+<td><strong>OV-M (Ov/Capr)</strong></td>
+<td style="text-align:right">1000 kg</td>
+<td style="text-align:right">R$ 0,11</td>
+<td style="text-align:right">R$ 95,00</td>
+<td style="text-align:right"><strong>R$ 205,00</strong></td>
+</tr>
+<tr>
+<td><strong>PA-PET (Pássaros)</strong></td>
+<td style="text-align:right">1000 kg</td>
+<td style="text-align:right">—</td>
+<td style="text-align:right">—</td>
+<td style="text-align:right"><strong>—</strong></td>
+</tr>
+<tr>
+<td><strong>AQ-T (Tilápia)</strong></td>
+<td style="text-align:right">1000 kg</td>
+<td style="text-align:right">R$ 0,24</td>
+<td style="text-align:right">R$ 95,00</td>
+<td style="text-align:right"><strong>R$ 335,00</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="f-col">
+        <img src="jaissonracoes-logo-text.png" alt="Logo Jaisson Rações" width="160" height="25" />
+        <p class="f-copy">© <span id="year"></span> Jaisson Rações. Todos os direitos reservados.</p>
+      </div>
+      <nav class="f-col f-nav">
+        <a href="fazendas.html">Fazendas</a>
+        <a href="agricultura.html">Agricultura</a>
+        <a href="logistica.html">Logística</a>
+        <a href="producao.html">Produção</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="sustentabilidade.html">Sustentabilidade</a>
+        <a href="pesquisa.html" aria-current="page">Pesquisa Operacional</a>
+        <li><a href="pesquisa.html">Pesquisa Operacional</a></li>
+
+      </nav>
+      <div class="f-col">
+        <p class="f-small">Pirabeiraba – SC • codykoinabox+jaissonracoes@gmail.com</p>
+      </div>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
