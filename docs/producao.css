@@ -1,0 +1,81 @@
+/* =========================
+   Produção — Jaisson Rações
+   ========================= */
+
+/* HERO fábrica */
+.factory-hero{
+  position: relative;
+  height: 70vh;
+  background: url('https://i.ibb.co/FkPCZ4qT/Gemini-Generated-Image-fmuf6vfmuf6vfmuf.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.factory-hero .hero-overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(rgba(19,116,49,.65), rgba(19,116,49,.3));
+}
+.factory-hero .hero-content{
+  position:relative; z-index:1; max-width:720px;
+}
+.factory-hero h1{ font-size: clamp(28px, 5vw, 52px); margin: 8px 0; }
+
+/* LINHA DE PRODUÇÃO — “um por andar” */
+.linha-producao{ padding: 64px 0 32px; }
+.processo-stack{
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr;         /* sempre 1 por linha */
+}
+.proc-card{
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .25s ease;
+}
+.proc-card:hover{ transform: translateY(-4px); }
+.proc-img{
+  /* fotos mais altas para não “esticar” */
+  background: var(--ph) center/cover no-repeat;
+  min-height: 360px;                  /* ↑ deixa mais cinematográfico */
+  aspect-ratio: 16/7;                 /* wide, sem distorcer */
+}
+.proc-info{ padding: 18px 20px; }
+.proc-info h3{ margin: 0 0 6px; color: var(--green-900); }
+.proc-info p{ margin: 0; color: var(--ink-2); }
+
+/* HERO escritório (foto externa ANTES dos cards) */
+.office-hero{
+  position: relative;
+  height: 56vh;
+  background: url('https://i.ibb.co/TD7QPkkV/100b6948-e4c0-4c97-99c4-50c52f453ec5.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin-top: 18px;
+}
+.office-hero .hero-overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(rgba(19,116,49,.55), rgba(19,116,49,.25));
+}
+.office-hero .hero-content{
+  position:relative; z-index:1; max-width:760px;
+}
+.office-hero h2{ margin: 8px 0 0; font-size: clamp(22px, 4vw, 36px); }
+
+/* ESTRUTURA / ESCRITÓRIO (mantido) */
+.estrutura{ padding: 64px 0; background: var(--green-50); }
+.estrutura-grid{
+  display:grid;
+  gap:24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.amen-card{
+  background:#fff; border-radius:16px;
+  overflow:hidden; box-shadow: var(--shadow);
+}
+.amen-img{ aspect-ratio: 16/10; background: var(--ph) center/cover no-repeat; }
+.amen-info{ padding:14px 16px; }
+.amen-info h3{ margin:0 0 4px; }
+.amen-info p{ margin:0; color:var(--ink-2); }
