@@ -1,5 +1,5 @@
-# RESOLUCAO
-
+## Google Colab (código) de resolução: https://colab.research.google.com/drive/19RtrcS1mf3BfwthSmMZOujQqx4Hylm8o?usp=sharing
+---
 
 # Formulação do Problema de Programação Linear - Jaisson Rações
 
