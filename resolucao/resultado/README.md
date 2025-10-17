@@ -55,11 +55,6 @@
 
 ## 🚛 LOGÍSTICA — TRANSPORTES POR FAZENDA E CUSTOS
 
-| Grão | Caminhão Pequeno | Custo Pequeno | Caminhão Médio | Custo Médio | Caminhão Grande | Custo Grande |
-| :--: | :-------------: | :-----------: | :-----------: | :---------: | :------------: | :----------: |
-| AA | AA viagens | R$ AA | AA viagens | R$ AA | AA viagens | R$ AA |
-| **Custo Total** |  **R$ AA** |
-
 ### Fazenda Maruim:
 | Grão | Caminhão Pequeno | Custo Pequeno | Caminhão Médio | Custo Médio | Caminhão Grande | Custo Grande |
 | :--: | :-------------: | :-----------: | :-----------: | :---------: | :------------: | :----------: |
@@ -110,56 +105,65 @@
 
 ----------
 
-📦 PRODUÇÃO DE RAÇÕES — ITENS E TAMANHOS
+## 📦🏭 QUANTIDADE E CUSTOS DA PRODUÇÃO DE RAÇÕES
 
-Linha BC-G:
-  - std:     150000 itens
-  -  bb:       3000 itens
+### Linha BC-G (Bovino corte)
+| Tamanho | Quantidade | Custo |
+| :-----: | :--------: | :-----: |
+| Padrão  | 150.000 itens   | R$ 1.200.000,00 |
+| Big Bag | 3.000 itens   | R$ 585.000,00 |
 
-Linha BL-L:
-  - std:     110000 itens
-  -  bb:       2200 itens
 
-Linha AV-P:
-  - std:     105000 itens
-  -  bb:       1125 itens
+### Linha BL-L (Vaca leiteira)
+| Tamanho | Quantidade | Custo |
+| :-----: | :--------: | :-----: |
+| Padrão  | 110.000 itens   | R$ 913.000,00 |
+| Big Bag | 2.200 itens   | R$ 451.000,00 |
 
-Linha EQ-M:
-  - std:      60000 itens
 
-Linha OV-M:
-  - std:      60000 itens
-  -  bb:       1200 itens
+### Linha AV-P (Galinha poedeira)
+| Tamanho | Quantidade | Custo |
+| :-----: | :--------: | :-----: |
+| Padrão  | 105.000 itens   | R$ 787.500,00 |
+| Big Bag | 1.125 itens   | R$ 241.875,00 |
 
-Linha PA-PET:
-  - std:      50000 itens
 
-Linha AQ-T:
-  - std:      60000 itens
-  -  bb:       1500 itens
+### Linha EQ-M (Equinos)
+| Tamanho | Quantidade | Custo |
+| :-----: | :--------: | :-----: |
+| Padrão  | 60.000 itens   | R$ 450.000,00 |
+| Big Bag | 0 itens   | R$ 0,00 |
 
-🧾 CUSTO TOTAL COM INGREDIENTES COMPRADOS: R$ 7,540,237.50
 
-🏭 CUSTO DE PRODUÇÃO DE RAÇÕES (por linha e tamanho)
-  - BC-G   std: R$ 1,200,000.00
-  - BC-G   bb : R$ 585,000.00
-  - BL-L   std: R$ 913,000.00
-  - BL-L   bb : R$ 451,000.00
-  - AV-P   std: R$ 787,500.00
-  - AV-P   bb : R$ 241,875.00
-  - EQ-M   std: R$ 450,000.00
-  - OV-M   std: R$ 498,000.00
-  - OV-M   bb : R$ 246,000.00
-  - PA-PET std: R$ 320,000.00
-  - AQ-T   std: R$ 630,000.00
-  - AQ-T   bb : R$ 502,500.00
+### Linha OV-M (Ovelhas e Cabras)
+| Tamanho | Quantidade | Custo |
+| :-----: | :--------: | :-----: |
+| Padrão  | 60.000 itens   | R$ 498.000,00 |
+| Big Bag | 1.200 itens   | R$ 246.000,00 |
 
-💰 CUSTO TOTAL DE PRODUÇÃO DE RAÇÕES: R$ 6,824,875.00
 
-🧮 CUSTO TOTAL DE OPERAÇÃO: R$ 51,333,762.20
+### Linha PA-PET (Pássaros)
+| Tamanho | Quantidade | Custo |
+| :-----: | :--------: | :-----: |
+| Padrão  | 50.000 itens   | R$ 320.000,00 |
+| Big Bag | 0 itens   | R$ 0,00 |
 
-💵 FATURAMENTO TOTAL: R$ 81,523,341.23
 
-🏆 LUCRO FINAL (ótimo global): R$ 30,189,579.03
+### Linha AQ-T (Tilápia)
+| Tamanho | Quantidade | Custo |
+| :-----: | :--------: | :-----: |
+| Padrão  | 60.000 itens   | R$ 630.000,00 |
+| Big Bag | 1.500 itens   | R$ 502.500,00 |
 
-✅ RELATÓRIO COMPLETO GERADO COM SUCESSO
+
+### 🧾 CUSTO TOTAL DE INGREDIENTES EXTRAS COMPRADOS: R$ 7,540,237.50
+
+### 💰 CUSTO TOTAL DE PRODUÇÃO DE RAÇÕES: R$ 6,824,875.00
+
+----------
+
+## 🧮 CUSTO TOTAL DE OPERAÇÃO: R$ 51,333,762.20
+
+## 💵 FATURAMENTO TOTAL: R$ 81,523,341.23
+
+## 🏆 LUCRO FINAL (ótimo global): R$ 30,189,579.03
